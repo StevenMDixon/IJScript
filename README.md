@@ -1,5 +1,5 @@
 # BadJavaScript
-A testament to how bad JS can get
+A Testament to how bad JS can get without style guides.
 
 
 ## Goal
