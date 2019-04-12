@@ -4,7 +4,7 @@ A Testament to how bad JS can get without style guides.
 
 ## Goal
 
-Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who rights javascript should do.
+Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who codes in javascript should do.
 
 
 ## Challenge
