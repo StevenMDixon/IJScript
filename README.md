@@ -47,7 +47,7 @@ We can obviously tell what a normal answer does, because its readable. No commen
 Have the function take two numbers and return the greatest common factor of both numbers. For example: if params = 4 and 12, then your program should return 4. 
 
 <details>
-<summary>My Answer</summary>
+<summary>BadJavaScript Answer</summary>
 <br>
   
 ```Javascript
@@ -64,7 +64,7 @@ Have the function take two numbers and return the greatest common factor of both
 Have the function take the parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. 
 
 <details>
-<summary>My Answer</summary>
+<summary>BadJavaScript Answer</summary>
 <br>
   
 ```Javascript
@@ -82,7 +82,7 @@ Have the function take the parameter being passed and return the factorial of it
 Have the function _Q(n,m) take both parameters being passed and return the string true if m is greater than n, otherwise return the string false. If the parameter values are equal to each other then return the string -1. 
 
 <details>
-<summary>My Answer</summary>
+<summary>BadJavaScript Answer</summary>
 <br>
   
 ```Javascript
