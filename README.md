@@ -16,6 +16,8 @@ Create the most unreadable answers for common "coding test" questions and have t
 - [ ] Variable and Function names should not tell the reader what the variable/function does.
 - [ ] Oustide of the scope of the question it should be almost impossible to discern what the function or answer does.
 - [ ] Do not use If statements. Ternary statements are required instead. You better nest those statments if you need an if-else.
+- [ ] Don't forget to ABUSE JavaScript's type coercion
+
 
 ## Example
 
