@@ -17,6 +17,27 @@ Create the most unreadable answers for common "coding test" questions and have t
 - [ ] Oustide of the scope of the question it should be almost impossible to discern what the function or answer does.
 - [ ] Do not use If statements. Ternary statements are required instead. You better nest those statments if you need an if-else.
 
+## Example
+
+### Challenge
+
+Have the function G take the str parameter being passed and return the string in reversed order. For example: if the input string is "Hello World and Coders" then your program should return the string sredoC dna dlroW olleH. 
+
+Normal Answer:
+
+``` JavaScript
+function G(str) {  
+  return str.split("").reverse().join("");       
+}
+```
+BadJavaScript Answer:
+
+``` JavaScript
+const _G=(s,e,n=+Object.keys(s+' ').pop())=>(!n?e:_G(s,e+s[n],n-1))
+```
+
+We can obviously tell what a normal answer does, because its readable. No comments are needed if you know what the higher order functions from String and Array do. The bad answer is almost unreadable, no brackets no higher order functions that tell us what exactly is going on in the function just pure unreadable chaos. Without any comments or the challenge notes it would take a while to decode exactly what this function does.
+
 ## Log
 
 ### Day one 
@@ -34,7 +55,6 @@ Have the function take two numbers and return the greatest common factor of both
 ```
 </details>
 
-
 ---
 
 ### Day two
@@ -50,4 +70,24 @@ Have the function take the parameter being passed and return the factorial of it
 ```Javascript
   const _F=((n, g=1)=>!n?g:_F(n-1, g*n))  
 ```
+
 </details>
+
+---
+
+### Day three
+
+#### Challenge:
+
+Have the function CheckNums(n,m) take both parameters being passed and return the string true if m is greater than n, otherwise return the string false. If the parameter values are equal to each other then return the string -1. 
+
+<details>
+<summary>My Answer</summary>
+<br>
+  
+```Javascript
+  const _Q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''  
+```
+</details>
+
+
