@@ -79,7 +79,7 @@ Have the function take the parameter being passed and return the factorial of it
 
 #### Challenge:
 
-Have the function CheckNums(n,m) take both parameters being passed and return the string true if m is greater than n, otherwise return the string false. If the parameter values are equal to each other then return the string -1. 
+Have the function _Q(n,m) take both parameters being passed and return the string true if m is greater than n, otherwise return the string false. If the parameter values are equal to each other then return the string -1. 
 
 <details>
 <summary>My Answer</summary>
