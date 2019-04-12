@@ -94,6 +94,9 @@ let b = false+""
 
 <details>
 <summary>View</summary>
+  
+  I feel as though I have failed you. Don't you remember we are trying to write unreadable code. You should not need to use these things. I mean you can, but you will have to make them unreadable.
+ 
 </details>
 
 ## Length Of Arrays/Strings
