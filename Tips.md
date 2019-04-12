@@ -2,9 +2,13 @@
 
 ## Coercion
 
+<details>
+<summary>View</summary>
+ 
 Coercion is going to be your best freind on making your code more unreadable. Here are a few examples to help you out!
 
 ### === or the 'Strict Equal'
+
 
 In javascript if we want to check if something is equal we use the '===' statement. This is great and short however it is readable. Obviously something we don't want in our BadJavaScript code.
 
@@ -70,15 +74,33 @@ let b = false+""
 
 ```
 
-+ is a very powerfull tool indeed. It allows us to use coercion effectively. 
+'+ is a very powerfull tool indeed. It allows us to use coercion effectively. 
 
+</details>
+  
 ## Functions
+
+<details>
+<summary>View</summary>
+</details>
 
 ## If/Switch
 
+<details>
+<summary>View</summary>
+</details>
+
 ## for/of/in
 
+<details>
+<summary>View</summary>
+</details>
+
 ## Length Of Arrays/Strings
+
+<details>
+<summary>View</summary>
+
 
 Normally we would use Object.length in order to find the length of arrays or strings. As this is bad javascript there is a better way. And its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. An arrays keys are its 
 
@@ -92,6 +114,6 @@ Normally we would use Object.length in order to find the length of arrays or str
 
 How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the last index of an array. then + makes sure the returned item is an integer.
 
-
+</details>
 
 
