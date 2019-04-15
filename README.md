@@ -15,6 +15,7 @@ Create the most unreadable answers for common "coding test" questions and have t
 - [ ] Do not use semicolons unless necessary
 - [ ] Do not use line breaks
 - [ ] Function should try to be recursive this is not neccesary for some challenges
+- [ ] How else would you write for/while loops without recursion?
 - [ ] Do not declare temporary variables outside of default paramaters
 - [ ] Variable and Function names should not tell the reader what the variable/function does
 - [ ] Oustide of the scope of the question it should be almost impossible to discern what the function or answer does.
