@@ -107,7 +107,7 @@ Write a function that takes in a string of one or more words, and returns the sa
 <br>
   
 ```Javascript
-const _Z = (a,b=a.match(/\w+/g),i=0,f="")=>(!(i-(Object.keys(b).pop()+1))?f:_H(a,b,i+1,f+' '+(!!b[i].lastIndexOf("")-5?[...b[i]].reduce((h,m)=>(h+h+m),""):b[i])))  
+const _Z = (a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:_Z(a, b, i+1, f+(i?' ':'')+(b[i].lastIndexOf("")>=5?[...b[i]].reduce((h,m) =>h=m+h,""):b[i]))) 
 ```
 
 </details>
