@@ -1,6 +1,9 @@
 # BadJavaScript
 A Testament to how bad JS can get without style guides, comments, or just general best practices.
 
+![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
+
+Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS. 
 
 ## Goal
 
@@ -90,6 +93,22 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 ```Javascript
   const _Q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''  
 ```
+</details>
+
+### Day four
+
+#### Challenge:
+
+Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+<details>
+<summary>BadJavaScript Answer</summary>
+<br>
+  
+```Javascript
+const _Z = (a,b=a.match(/\w+/g),i=0,f="")=>(!(i-(Object.keys(b).pop()+1))?f:_H(a,b,i+1,f+' '+(!!b[i].lastIndexOf("")-5?[...b[i]].reduce((h,m)=>(h+h+m),""):b[i])))  
+```
+
 </details>
 
 
