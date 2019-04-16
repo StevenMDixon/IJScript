@@ -188,7 +188,7 @@ let a = 1;
 let b = ({0:'a',1:'e'}[a]||"")
 //a === 'e'  
 
-``
+```
 
 But wait you declare, shouldn't this return true? Well if you remember from the section in type coercion when using `||`, `&&`, or `!!` the return will be the first truthy value!
 
