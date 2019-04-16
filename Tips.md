@@ -203,6 +203,22 @@ Now you might be thinking wait what about `default` that we can use in `switch` 
 <summary>View</summary>
   
   I feel as though I have failed you. Don't you remember we are trying to write unreadable code. You should not need to use these things. I mean you can, but you will have to make them unreadable.
+  
+ Well fortunatly with much glee I am happy to tell you there is a way to iterate through things with out for loops or fancy prototype functions.
+ 
+ ### Iterators
+ 
+ iterators are a fun exorcise in writing unreadable code, they obfuscate what your code is doing. So what if I told you we can Iterate any thing that can be turned into an array in javascript?
+ 
+ Let me introduce you to the equivalant of prototype.length but with Iterators
+ 
+ ``` Javascript
+ 
+ const test=(e,d=[...e].values(),c=0)=>(r=>!(r)?c:test(e,d,c+1))(d.next().value)
+ 
+ ```
+ 
+ `Array.prototype.values()` is a nice little bit of code that returns an `Iterator Object` with one property, `next()`. When next hits the end of an array its value is returned as `undefined`. Using IIFE we can create functions that Iterate with out parameter or variables for an index.
  
 </details>
 
