@@ -114,4 +114,20 @@ const _Z = (a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:_Z(a,
 
 </details>
 
+---
 
+### Day five
+
+#### Challenge:
+
+Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+
+<details>
+<summary>BadJavaScript Answer</summary>
+<br>
+  
+```Javascript
+const _O = (a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:_O(a,b+({0:'(',3:') ',6:'-'}[i]||'')+a[i],i+1))
+```
+
+</details>
