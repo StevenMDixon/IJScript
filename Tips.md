@@ -1,5 +1,7 @@
 # Tips on Writing BadJavaScript
 
+Welcome to the tips section hopefully this will help you write some aweful javascript code.
+
 ## Coercion
 
 <details>
@@ -148,10 +150,6 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 !!false     // false
 
 ```
-
-
-
-
 </details>
   
 ## Functions
@@ -164,6 +162,39 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 
 <details>
 <summary>View</summary>
+ 
+Need an `if`? use a ternary statement! Need an `else if`? Nest ternary statements! 
+
+```JavaScript
+
+let a = 0;
+let b = 1;
+let c = 0;
+
+let d = a?a:b?a:c
+// what could d be? nobody knows! *its a... d = a*
+```
+
+ternary statements are probably the worst offenders on the list of things you will read here.
+ 
+Unfortunatly we don't really have access to the `switch` statement but we have the next best thing! 
+
+Let me introduce you to the Inline `ObjectXor`!
+
+```JavaScript
+
+let a = 1;
+
+let b = ({0:'a',1:'e'}[a]||"")
+//a === 'e'  
+
+``
+
+But wait you declare, shouldn't this return true? Well if you remember from the section in type coercion when using `||`, `&&`, or `!!` the return will be the first truthy value!
+
+Now you might be thinking wait what about `default` that we can use in `switch` statemets? Amazingly if a was a number that was not in the object the statement returns undefined. As we know from coercion `undefined === false` so `undefined||''` always will return `''`.
+
+ 
 </details>
 
 ## for/of/in
