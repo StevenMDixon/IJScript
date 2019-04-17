@@ -134,7 +134,7 @@ const _O = (a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:_O(a,b+({0:'(',3:') '
 
 ---
 
-### Challenge five
+### Challenge six
 
 #### Challenge:
 
