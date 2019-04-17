@@ -145,7 +145,7 @@ Complete the solution so that it splits the string into pairs of two characters.
 <br>
   
 ```Javascript
-const _I=(a, b=[], c=[...a].values(), i=0)=>(r=>!(r)?b.map(u=>+((+Object.keys(u+'').pop())%2)?u:u+'_'):_I(a,(!(i%2)?[...b,a.substr(i,2)]:b),c,i+1))(c.next().value)
+const _I=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).pop())?u:u+'_')):_I(a,(!(i%2)?[...b,a.substr(i,2)]:b),c,i+1))(c.next().value)
 ```
 
 </details>
