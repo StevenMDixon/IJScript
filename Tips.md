@@ -163,6 +163,8 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 <details>
 <summary>View</summary>
  
+### Ternary Statements
+ 
 Need an `if`? use a ternary statement! Need an `else if`? Nest ternary statements! 
 
 ```JavaScript
@@ -176,6 +178,44 @@ let d = a?a:b?a:c
 ```
 
 ternary statements are probably the worst offenders on the list of things you will read here.
+
+### exclusive `&&`/`||`
+
+if you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned
+
+```JavaScript
+
+let a = true&&'apples';
+// a === 'apples'
+
+let b =- false||'grapes';
+// b = 'grapes'
+
+//we get some fun times when you chain them together for if else statments
+
+let c = a && (false||b);
+
+// what do you think c equals? its 'grapes'!
+
+// heres a fun tid bit
+
+let d = (c&&(a||b), a+1)
+
+// this will run but what will it return?
+
+//'apples1' weird right...
+
+//this is what most minifiers use to remove if statements, here is an example. what do you think this function does?
+
+function example(a){
+ return (a<5&&(a+=5)), a;
+}
+
+// If your answer was return `a+5` when a < 5 is true and return a when a >=5 then you are correct. Everything in the comparision is evaluated only if a < 5 is true. however a is always evaluated because the compiler evaluates from left to right. Crazy right?
+
+```
+
+### switch/case
  
 Unfortunatly we don't really have access to the `switch` statement but we have the next best thing! 
 
