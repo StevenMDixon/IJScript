@@ -46,7 +46,7 @@ We can obviously tell what a normal answer does, because its readable. No commen
 
 ## Log
 
-### Day one 
+### Challege one 
 
 #### Challenge:
 
@@ -63,7 +63,7 @@ Have the function take two numbers and return the greatest common factor of both
 
 ---
 
-### Day two
+### Challege two
 
 #### Challenge:
 
@@ -81,7 +81,7 @@ Have the function take the parameter being passed and return the factorial of it
 
 ---
 
-### Day three
+### Challege three
 
 #### Challenge:
 
@@ -98,7 +98,7 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 
 ---
 
-### Day four
+### Challege four
 
 #### Challenge:
 
@@ -116,7 +116,7 @@ const _Z = (a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:_Z(a,
 
 ---
 
-### Day five
+### Challege five
 
 #### Challenge:
 
