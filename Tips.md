@@ -215,6 +215,28 @@ function example(a){
 
 ```
 
+### `,`
+
+What its just a `,` or is it?
+
+what would you say `console.log(5, 10)` prints? 
+
+`5 10` is the correct answer, how about `console.log((5, 10))`?
+
+You would think `(5, 10)` but in fact it prints `10`.
+
+Why? well JavaScript actually has an operator called the `comma operator` and it always return the farthest left item.
+
+For instance `(1, 3, 4)` will always evaluate to `4`.
+
+Of course this exploitable... 
+
+```JavaScript
+
+
+
+```
+
 ### switch/case
  
 Unfortunatly we don't really have access to the `switch` statement but we have the next best thing! 
