@@ -63,7 +63,7 @@ Have the function take two numbers and return the greatest common factor of both
 
 ---
 
-### Challege two
+### Challenge two
 
 #### Challenge:
 
@@ -81,7 +81,7 @@ Have the function take the parameter being passed and return the factorial of it
 
 ---
 
-### Challege three
+### Challenge three
 
 #### Challenge:
 
@@ -98,7 +98,7 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 
 ---
 
-### Challege four
+### Challenge four
 
 #### Challenge:
 
@@ -116,7 +116,7 @@ const _Z = (a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:_Z(a,
 
 ---
 
-### Challege five
+### Challenge five
 
 #### Challenge:
 
