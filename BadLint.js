@@ -44,7 +44,7 @@ class BadJSMinify {
   }
   _replaceIF(){
   	let ifs = this.code.match(/ /gm);
-    
+    //if(.|\s)*?}|else(.|\s)*?}
   	return this
   }
   _replaceFunction(){ //still under construction
