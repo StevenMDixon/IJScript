@@ -225,15 +225,15 @@ what would you say `console.log(5, 10)` prints?
 
 You would think `(5, 10)` but in fact it prints `10`.
 
-Why? well JavaScript actually has an operator called the `comma operator` and it always return the farthest left item.
+Why? well JavaScript actually has an operator called the `comma operator` and it always return the farthest right item.
 
 For instance `(1, 3, 4)` will always evaluate to `4`.
 
-Of course this exploitable... 
+Of course this is exploitable... 
 
 ```JavaScript
 
-
+In progress...
 
 ```
 
