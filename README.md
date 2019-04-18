@@ -12,7 +12,7 @@ Create the most unreadable answers for common "coding test" questions and have t
 
 ## Rules
 
-- [ ] using a minifyer is cheating half the fun is writing the code!
+- [ ] using a minifyer is cheating! (half the fun is writing the code!)
 - [ ] Do not use line breaks or semicolons unless necessary
 - [ ] Function should try to be recursive this is not neccesary for some challenges
 - [ ] How else would you write for/while loops without recursion?
@@ -36,6 +36,12 @@ function G(str) {
   return str.split("").reverse().join("");       
 }
 ```
+Minifyed Code:
+
+```JavaScript
+ function G(str){return str.split("").reverse().join("")}
+```
+
 BadJavaScript Answer:
 
 ``` JavaScript
