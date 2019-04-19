@@ -3,7 +3,7 @@ A Testament to how bad JS can get without style guides, comments, or just genera
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
-Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS. Coming Soon Bad JS Minifyer! (Why go through writing bad code when I could do it for you!)
+Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS.
 
 ## Goal
 
