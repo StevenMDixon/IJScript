@@ -158,3 +158,12 @@ const _I=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).po
 
 </details>
 
+## Conclusion
+
+JavaScript is a very quirky language and can be written several different ways. Not all of these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certianly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
+
+### Guides on writing actual good code!
+
+- [Air BnB Style Guide](https://github.com/airbnb/javascript)
+- [Google Style Guide](https://google.github.io/styleguide/jsguide.html)
+- [Idiomatic JavaScript Style Guide](https://github.com/rwaldron/idiomatic.js/)
