@@ -3,7 +3,9 @@ A Testament to how bad JS can get without style guides, comments, or just genera
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
-Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS.
+Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS. This project has concluded it was a very interesting process learning some of the quirks of JavaScript, However I feel if I continue down this path I may find my self falling into bad practice when coding.
+
+> "Practice makes perfect, but imperfect when practiced poorly." ~ some old dead guy.
 
 ## Goal
 
