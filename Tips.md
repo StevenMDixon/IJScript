@@ -7,9 +7,6 @@ To put it lightly this may offend you, and you should be offended. However it wa
 JavaScript is a VERY quirky language, and I am going to show you how to write the worst code possible.
 
 ## Coercion
-
-<details>
-<summary>View</summary>
  
 Coercion is going to be your best freind on making your code more unreadable. Here are a few examples to help you out!
 
@@ -87,7 +84,6 @@ let b = 'Test'
 (b > a || b > a)
 
 ```
-
 
 ### Bool/String/Number Coercion
 
@@ -178,19 +174,9 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 !!false     // false
 
 ```
-</details>
-  
-## Functions
-
-<details>
-<summary>View</summary>
-</details>
 
 ## If/Switch
 
-<details>
-<summary>View</summary>
- 
 ### Ternary Statements
  
 Need an `if`? use a ternary statement! Need an `else if`? Nest ternary statements! 
@@ -227,25 +213,11 @@ let c = a && (false||b);
 
 // heres a fun tid bit
 
-let d = (c&&(a||b), a+1)
-
-// this will run but what will it return?
-
-//'apples1' weird right...
-
-//this is what most minifiers use to remove if statements, here is an example. what do you think this function does?
-
-function example(a){
- return (a<5&&(a+=5)), a;
-}
-
-// If your answer was return `a+5` when a < 5 is true and return a when a >=5 then you are correct. Everything in the comparision is evaluated only if a < 5 is true. however a is always evaluated because the compiler evaluates from left to right. Crazy right?
-
 ```
 
-### `,`
+### The Comma operator `,`
 
-What its just a `,` or is it?
+wait `,` is an operator? like `>` or `&&`? Yes!
 
 what would you say `console.log(5, 10)` prints? 
 
@@ -253,15 +225,29 @@ what would you say `console.log(5, 10)` prints?
 
 You would think `(5, 10)` but in fact it prints `10`.
 
-Why? well JavaScript actually has an operator called the `comma operator` and it always return the farthest right item.
+Why? well JavaScript actually has an operator called the `comma operator` and it always return the farthest right item in an expression.
 
 For instance `(1, 3, 4)` will always evaluate to `4`.
+
+remember everything in the expression is evaluated!
 
 Of course this is exploitable... 
 
 ```JavaScript
+let a = 'apples';
 
-In progress...
+// this will run but what will it return?
+
+let d = (c&&(a||b), a+1)
+
+//'apples1' weird right...
+
+function example(a){
+ return (a<5&&(a+=5)), a;
+}
+
+// If your answer was return `a+5` when a < 5 is true and return a when a >=5 then you are correct. Everything in the comparision is 
+// evaluated only if a < 5 is true. however a is always evaluated because the compiler evaluates from left to right. Crazy right?
 
 ```
 
@@ -269,38 +255,37 @@ In progress...
  
 Unfortunatly we don't really have access to the `switch` statement but we have the next best thing! 
 
-Let me introduce you to the Inline `ObjectXor`!
+Let me introduce you to the Inline `MapSwitch`!
 
 ```JavaScript
 
 let a = 1;
 
-let b = ({0:'a',1:'e'}[a]||"")
+let b = ({0:'a',1:'e'}[a]||true)
 //a === 'e'  
 
 ```
 
-But wait you declare, shouldn't this return true? Well if you remember from the section in type coercion when using `||`, `&&`, or `!!` the return will be the first truthy value!
-
 Now you might be thinking wait what about `default` that we can use in `switch` statemets? Amazingly if a was a number that was not in the object the statement returns undefined. As we know from coercion `undefined === false` so `undefined||''` always will return `''`.
 
- 
-</details>
 
 ## for/of/in
+  
+I feel as though I have failed you. Don't you remember we are trying to write unreadable code. You should not need to use these things. I mean you can, but you will have to make them unreadable.
 
-<details>
-<summary>View</summary>
+for statements cannot be written without `{` and `}`. so not realy useful in this instance.
   
-  I feel as though I have failed you. Don't you remember we are trying to write unreadable code. You should not need to use these things. I mean you can, but you will have to make them unreadable.
-  
- Well fortunatly with much glee I am happy to tell you there is a way to iterate through things with out for loops or fancy prototype functions.
+Fortunatly with much glee I am happy to tell you there is a way to iterate through things with out for loops or fancy prototype functions.
  
  ### Iterators
  
  iterators are a fun exorcise in writing unreadable code, they obfuscate what your code is doing. So what if I told you we can Iterate any thing that can be turned into an array in javascript?
  
  Let me introduce you to the equivalant of prototype.length but with Iterators
+ 
+ both `Array.prototype.values()` and `Array.prototype.entries()` return a iterator that contains the values of a string or array.
+ 
+ These are very obscure functions and it goes without saying iterators are very hard to keep up with.  
  
  ``` Javascript
  
@@ -309,14 +294,8 @@ Now you might be thinking wait what about `default` that we can use in `switch` 
  ```
  
  `Array.prototype.values()` is a nice little bit of code that returns an `Iterator Object` with one property, `next()`. When next hits the end of an array its value is returned as `undefined`. Using IIFE we can create functions that Iterate with out parameter or variables for an index.
- 
-</details>
 
 ## Length Of Arrays/Strings
-
-<details>
-<summary>View</summary>
-
 
 Normally we would use Object.length in order to find the length of arrays or strings. JS has some interesting string functions
 
@@ -343,7 +322,4 @@ As this is bad javascript there is a better way. And its name is Object.keys(). 
 ```
 
 How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the last index of an array. then + makes sure the returned item is an integer.
-
-</details>
-
 
