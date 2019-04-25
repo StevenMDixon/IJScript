@@ -38,7 +38,9 @@ return 'the numbers are equal'
 
 ##### Strings
 
-Strings are a lot more complicated as `===` makes comparisions trivial. The best way I could think of would to use `localeCompare()`.
+Strings are a lot more complicated as `===` makes comparisions trivial. 
+
+The best way I could think of would to use `localeCompare()`. 
 
 ```JavaScript
 
@@ -60,6 +62,28 @@ text2.search(new RegExp(`^${text1}$`,'g')) //Will return 0 if it matches and -1 
 //-1 is true and 0 is false so we need to use ! to flip that.
 
 ```
+
+Well I guess regex did not answer your question so lets try something fancier?
+
+Looping seems to be the only way to determine whether a string matches another... That just won't do!
+So here is a great solution. JavaScript support string comparision with `>` and `<`. JS uses “dictionary” or “lexicographical” order while looping through the strings to determine if one is Greater/Less than the other.
+
+So how can we exploit this? well if a string is equal to another then it is neither less than or greater than the other. If we write a expression that returns true when the string is greater than or less than the other string we can effectively create a comparision that replaces `===`
+
+```JavaScript
+let a = 'test';
+let b = 'Test'
+
+(a < b || b < a)
+// equals true
+
+//this can be rewritten in many different ways
+(a > b || b > a)
+(b > a || a > b)
+(b > a || b > a)
+
+```
+
 
 ### Bool/String/Number Coercion
 
