@@ -2,6 +2,10 @@
 
 Welcome to the tips section hopefully this will help you write some aweful javascript code.
 
+To put it lightly this may offend you, and you should be offended. However it was your curiousity that lead you here.
+
+JavaScript is a VERY quirky language, and I am going to show you how to write the worst code possible.
+
 ## Coercion
 
 <details>
