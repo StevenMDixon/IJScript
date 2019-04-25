@@ -314,13 +314,27 @@ Now you might be thinking wait what about `default` that we can use in `switch` 
 <summary>View</summary>
 
 
-Normally we would use Object.length in order to find the length of arrays or strings. As this is bad javascript there is a better way. And its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. An arrays keys are its 
+Normally we would use Object.length in order to find the length of arrays or strings. JS has some interesting string functions
+
+```JavaScript
+let test = "ipsum";
+
+let length = test.lastIndexOf("");
+//length now equals the length of the string.
+
+```
+
+How does this work? well it's kind of apparent. JS starts at the end of the string searching for `""`. And Imagne that its at the end of the string!. It's kind of readable, would anyone suggest this instead of length? No. And unfortunatly this is a string prototype function which means it wont work on Arrays.
+
+However...
+
+As this is bad javascript there is a better way. And its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
 
 ```JavaScript
   
   let a = +Object.keys('I am a text').pop();
   //this will give you the length of a string or array
-  //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECCESARY TO ADD 1 TO GET THE ACTUAL LENGHT 
+  //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECCESARY TO ADD 1 TO GET THE ACTUAL LENGTH 
  
 ```
 
