@@ -7,23 +7,24 @@ Proceed with Caution. If you do get inspired [here](https://github.com/StevenDix
 
 This project has concluded it was a very interesting process learning some of the quirks of JavaScript, However I feel if I continue down this path I may find my self falling into bad practice when coding.
 
-> "Practice makes perfect, but imperfect when practiced poorly." ~ some old dead guy.
+> "Practice makes perfect, but imperfect when practiced poorly." ~ Some old dead guy.
+
+> "BadJS is a cthulian amalgamation of everything that is wrong with non-strict type languages" ~ Me
 
 ## Goal
 
-Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who codes in javascript should do.
+Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who codes in JavaScript should do.
 
 
 ## Rules
 
-- [ ] using a minifyer is cheating! (half the fun is writing the code!)
+- [ ] using a minifier is cheating! (half the fun is writing the code!)
 - [ ] Do not use line breaks or semicolons unless necessary
-- [ ] Function should try to be recursive this is not neccesary for some challenges
 - [ ] How else would you write for/while loops without recursion?
-- [ ] Do not declare temporary variables outside of default paramaters
+- [ ] Do not declare temporary variables outside of default parameters
 - [ ] Variable and Function names should not tell the reader what the variable/function does
-- [ ] Oustide of the scope of the question it should be almost impossible to discern what the function or answer does.
-- [ ] Do not use If statements. Ternary statements are required instead. You better nest those statments if you need an if-else.
+- [ ] Outside of the scope of the question it should be almost impossible to discern what the function or answer does.
+- [ ] Do not use If statements. Ternary statements are required instead. You better nest those statements if you need an if-else.
 - [ ] Don't forget to ABUSE JavaScript's type coercion
 - [ ] Remember it's not a hack if it works
 
@@ -31,7 +32,7 @@ Create the most unreadable answers for common "coding test" questions and have t
 
 ### Challenge
 
-Have the function G take the str parameter being passed and return the string in reversed order. For example: if the input string is "Hello World and Coders" then your program should return the string sredoC dna dlroW olleH. 
+Have the function G take the str parameter being passed and return the string in reversed order. For example: if the input string is "Hello World and Coders" then your program should return the string “sredoC dna dlroW olleH”. 
 
 Normal Answer:
 
@@ -40,7 +41,7 @@ function G(str) {
   return str.split("").reverse().join("");       
 }
 ```
-Minifyed Code:
+Minified Code:
 
 ```JavaScript
  function G(str){return str.split("").reverse().join("")}
@@ -56,7 +57,7 @@ We can obviously tell what a normal answer does, because its readable. No commen
 
 ## Log
 
-### Challege one 
+### Challenge one 
 
 #### Challenge:
 
@@ -66,7 +67,7 @@ Have the function take two numbers and return the greatest common factor of both
 <summary>BadJavaScript Answer</summary>
 <br>
   
-```Javascript
+```JavaScript
   const _U=(a,b,f=+(a<b?a:b))=>(!((!(+a%f))&&!(+b%f))?_U(b,a,f-1):f)
 ```
 </details>
@@ -136,7 +137,7 @@ Write a function that accepts an array of 10 integers (between 0 and 9), that re
 <summary>BadJavaScript Answer</summary>
 <br>
   
-```Javascript
+```JavaScript
 const _O = (a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:_O(a,b+({0:'(',3:') ',6:'-'}[i]||'')+a[i],i+1))
 ```
 
@@ -162,7 +163,7 @@ const _I=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).po
 
 ## Conclusion
 
-JavaScript is a very quirky language and can be written several different ways. Not all of these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certianly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
+JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
 
 ### Guides on writing actual good code!
 
