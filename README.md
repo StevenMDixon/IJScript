@@ -1,4 +1,4 @@
-# :no_entry_sign: BadJavaScript
+# :egg: BadJavaScript
 A Testament to how bad JS can get without style guides, comments, or just general best practices.
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
