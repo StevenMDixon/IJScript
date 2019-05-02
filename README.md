@@ -64,12 +64,41 @@ We can obviously tell what a normal answer does, because its readable. No commen
 Have the function take two numbers and return the greatest common factor of both numbers. For example: if params = 4 and 12, then your program should return 4. 
 
 <details>
+<summary>Normal Answer</summary>
+<br>
+  
+```JavaScript
+const _U = (num1, num2)=>{
+   const lowestNumber = 0;
+   const numberToReturn = 1;
+   if(num1 <= num2){
+     lowestNumber = num1;
+   }else{
+     lowestNumber = num2;  
+   }
+   for(let i = 0; i <= lowestNumber; i++){
+     if(num1%i === 0 && num2%i === 0){
+        numberToReturn = i;
+     }
+   }
+   return numberToReturn;
+}
+```
+
+Not a perfect answer in terms of speed, however it is more readable than the bad JS answer.
+
+</details>
+
+
+<details>
 <summary>BadJavaScript Answer</summary>
 <br>
   
 ```JavaScript
   const _U=(a,b,f=+(a<b?a:b))=>(!((!(+a%f))&&!(+b%f))?_U(b,a,f-1):f)
 ```
+
+
 </details>
 
 ---
