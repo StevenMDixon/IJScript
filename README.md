@@ -69,8 +69,8 @@ Have the function take two numbers and return the greatest common factor of both
   
 ```JavaScript
 const _U = (num1, num2)=>{
-   const lowestNumber = 0;
-   const numberToReturn = 1;
+   let lowestNumber = 0;
+   let numberToReturn = 1;
    if(num1 <= num2){
      lowestNumber = num1;
    }else{
