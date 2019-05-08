@@ -1,21 +1,22 @@
 # :japanese_goblin: BadJavaScript
-A Testament to how bad JS can get without style guides, comments, or just general best practices.
+
+BadJS is a testament to how unreadable code can get without style guides, comments, and general best practices.
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
 Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS. 
 
-This project has concluded it was a very interesting process learning some of the quirks of JavaScript, However I feel if I continue down this path I may find my self falling into bad practice when coding.
+This project has concluded and it was a very interesting process learning some of the quirks of JavaScript, However I feel if I continue down this path I may find my self falling into bad practice when coding.
 
 > "Practice makes perfect, but imperfect when practiced poorly." ~ Some old dead guy.
 
-## Goal
+## :dart: Goal
 
 Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who codes in JavaScript should do.
 
-## Rules
+## :mega: Rules
 
-- [ ] using a minifier is cheating! (half the fun is writing the code!)
+- [ ] using a minifier is cheating! (half the fun is writing the code! and it wont help anyways)
 - [ ] Do not use line breaks or semicolons unless necessary
 - [ ] How else would you write for/while loops without recursion?
 - [ ] Do not declare temporary variables outside of default parameters
@@ -52,9 +53,9 @@ const _G=(s,e,n=+Object.keys(s+' ').pop())=>(!n?e:_G(s,e+s[n],n-1))
 
 We can obviously tell what a normal answer does, because its readable. No comments are needed if you know what the higher order functions from String and Array do. The bad answer is almost unreadable, no brackets no higher order functions that tell us what exactly is going on in the function just pure unreadable chaos. Without any comments or the challenge notes it would take a while to decode exactly what this function does.
 
-## Log
+## :memo: Log
 
-### Challenge one 
+### Challenge :one:
 
 #### Challenge:
 
@@ -100,7 +101,7 @@ Not a perfect answer in terms of speed, however it is more readable than the bad
 
 ---
 
-### Challenge two
+### Challenge :two:
 
 #### Challenge:
 
@@ -118,7 +119,7 @@ Have the function take the parameter being passed and return the factorial of it
 
 ---
 
-### Challenge three
+### Challenge :three:
 
 #### Challenge:
 
@@ -135,7 +136,7 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 
 ---
 
-### Challenge four
+### Challenge :four:
 
 #### Challenge:
 
@@ -153,7 +154,7 @@ const _Z = (a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:_Z(a,
 
 ---
 
-### Challenge five
+### Challenge :five:
 
 #### Challenge:
 
@@ -171,7 +172,7 @@ const _O = (a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:_O(a,b+({0:'(',3:') '
 
 ---
 
-### Challenge six
+### Challenge :six:
 
 #### Challenge:
 
@@ -187,7 +188,7 @@ const _I=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).po
 
 </details>
 
-## Conclusion
+## :tada:	Conclusion
 
 JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
 
