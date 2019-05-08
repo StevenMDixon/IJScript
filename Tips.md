@@ -323,3 +323,28 @@ As this is bad javascript there is a better way. And its name is Object.keys(). 
 
 How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the last index of an array. then + makes sure the returned item is an integer.
 
+## :cherries: Variable Names
+
+Variable Names are the cherries on top of this giant stinking mess.
+
+For some reason the javascript allow unicode gliphs for 'Identifiers'.
+
+This means that you can use var \u0061 and var a interchangeably. Similarly, since var 1 is invalid, so is var \u0031.
+
+To note we can use `\u{74}\u{65}\u{73}\u{74}` or `\u0074\u0065\u0073\u0074` formats.
+
+Luckily some one was nice enough to create a nice little site that verifies if a unicode string is viable as an identifier [Here](https://mothereff.in/js-variables)
+
+Since we Can use unicode that means we can use EMOJIS.
+
+Thats right Emojis. However for this experement its more valuable to substitute strings of unicode as they are very much unreadable.
+
+```JavaScript
+
+
+
+
+```
+
+
+
