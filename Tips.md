@@ -1,4 +1,4 @@
-# Tips on Writing BadJavaScript
+# :mortar_board: Tips on Writing BadJavaScript
 
 Welcome to the tips section hopefully this will help you write some aweful javascript code.
 
@@ -6,7 +6,7 @@ To put it lightly this may offend you, and you should be offended. However it wa
 
 JavaScript is a VERY quirky language, and I am going to show you how to write the worst code possible.
 
-## Coercion
+## :capital_abcd: Coercion
  
 Coercion is going to be your best freind on making your code more unreadable. Here are a few examples to help you out!
 
@@ -175,7 +175,7 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 
 ```
 
-## If/Switch
+## :traffic_light: If/Switch
 
 ### Ternary Statements
  
@@ -295,7 +295,7 @@ Fortunatly with much glee I am happy to tell you there is a way to iterate throu
  
  `Array.prototype.values()` is a nice little bit of code that returns an `Iterator Object` with one property, `next()`. When next hits the end of an array its value is returned as `undefined`. Using IIFE we can create functions that Iterate with out parameter or variables for an index.
 
-## Length Of Arrays/Strings
+## :straight_ruler: Length Of Arrays/Strings
 
 Normally we would use Object.length in order to find the length of arrays or strings. JS has some interesting string functions
 
