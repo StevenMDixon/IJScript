@@ -9,12 +9,9 @@ This project has concluded it was a very interesting process learning some of th
 
 > "Practice makes perfect, but imperfect when practiced poorly." ~ Some old dead guy.
 
-> "BadJS is a cthulian amalgamation of everything that is wrong with non-strict type languages" ~ Me
-
 ## Goal
 
 Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who codes in JavaScript should do.
-
 
 ## Rules
 
