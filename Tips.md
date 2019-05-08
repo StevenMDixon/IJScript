@@ -335,16 +335,56 @@ To note we can use `\u{74}\u{65}\u{73}\u{74}` or `\u0074\u0065\u0073\u0074` form
 
 Luckily some one was nice enough to create a nice little site that verifies if a unicode string is viable as an identifier [Here](https://mothereff.in/js-variables)
 
-Since we Can use unicode that means we can use EMOJIS.
-
-Thats right Emojis. However for this experement its more valuable to substitute strings of unicode as they are very much unreadable.
+In the example bellow our variable can be call by either `aa` or `a\u{61}`. This is great for obfuscation!
 
 ```JavaScript
 
+let a\u{61} = 'test';
 
+console.log(a\u{61})
+console.log(aa)
 
+//we can also use gliphs like this 
 
+let ಠ_ಠ = 6;
+
+console.log(ಠ_ಠ)
+// 6
+
+//Numbers can be written as follows
+
+let i = +('\u{31}\u{36}');
+// i = 16
+
+// You cannot use unicode as paramaters when declaring a function
+const badFunc = (/0032) =>{
+
+}
+// We can however pass in unicode identifiers or refer to the paramaters by their unicode equivalant
+
+let g = 'hello squirrel'
+
+const gFunc = (s) =>{
+ console.log(\u{73})
+}
+
+gFunc(\u{67})
 ```
 
+Here is a Quick function to convert Text to Unicode using unicode~!.
 
+```JavaScript 
+const _tU =(s,o='',i=0)=>(!((+Object.keys(s).pop()+1)-i)?o:_tU(\u{73},\u{6f}+'\\u{'+s.charCodeAt(i).toString(+('\u{31}\u{36}'))+'}', \u{69}+1));
+```
 
+Quick aside about Emojis.
+
+Currently we can use Emojis as Keys in objects because they are strings. 
+
+```Javscript
+let obj = {'🧡': 'hello'}
+
+console.log(obj['🧡'])
+// hello
+
+```
