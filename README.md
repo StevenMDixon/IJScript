@@ -2,8 +2,6 @@
 
 BadJS is a testament to how unreadable code can get without style guides, comments, and general best practices.
 
-![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
-
 Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS. 
 
 This project has concluded and it was a very interesting process learning some of the quirks of JavaScript, However I feel if I continue down this path I may find my self falling into bad practice when coding.
@@ -50,6 +48,8 @@ BadJavaScript Answer:
 ``` JavaScript
 const _G=(s,e,n=+Object.keys(s+' ').pop())=>(!n?e:_G(s,e+s[n],n-1))
 ```
+
+![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
 We can obviously tell what a normal answer does, because its readable. No comments are needed if you know what the higher order functions from String and Array do. The bad answer is almost unreadable, no brackets no higher order functions that tell us what exactly is going on in the function just pure unreadable chaos. Without any comments or the challenge notes it would take a while to decode exactly what this function does.
 
