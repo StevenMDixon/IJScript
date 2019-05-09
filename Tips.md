@@ -468,3 +468,21 @@ console.log(obj['🧡'])
 // hello
 
 ```
+## :sushi: +1
+
+I hate writing x+1 in my code, don't you?
+
+I mean its obvious we are adding 1 to an item.
+
+Here is a neat little trick to remove that problem
+
+```JavaScript
+
+let i = 1;
+
+let j = (-(~i))
+// j = 2
+
+```
+
+I want to say I understand how this works but I don't so here's a link to the [resource](https://www.geeksforgeeks.org/add-1-to-a-given-number/)
