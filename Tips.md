@@ -6,11 +6,11 @@ To put it lightly this may offend you, and you should be offended. However it wa
 
 JavaScript is a VERY quirky language, and I am going to show you how to write the worst code possible.
 
-## Functions
+## :arrow_right: Functions
 
 Functions will serve as the corner stone for writing our bad javascript.
 
-All of the functions that are written will be concise arrow functions
+All of the functions that are written will be `concise arrow functions`.
 
 ```JavaScript
 const example =()=>()
@@ -27,9 +27,9 @@ Fun facts about consice arrow functions
 
 const a = () =>('tomato')
 //always returns tomato
-const b = () =>(let c= 'test)
+const b = () =>(let c = 'test')
 //will throw an error
-const d = () =>(for(~){})
+const d = () =>(for(){})
 //will throw an error
 const e = () =>(a < b? 1:2)
 // `if` and such must be written as an expression
