@@ -2,29 +2,29 @@
 
 BadJS is a testament to how unreadable code can get without style guides, comments, and general best practices.
 
-Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are some useful tips on writing BadJS. 
-
-This project has concluded and it was a very interesting process learning some of the quirks of JavaScript, However I feel if I continue down this path I may find my self falling into bad practice when coding.
-
-> "Practice makes perfect, but imperfect when practiced poorly." ~ Some old dead guy.
+Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are all the tips I have on writing BadJS.
 
 ## :dart: Goal
 
-Create the most unreadable answers for common "coding test" questions and have them work properly. I would like to note before I get to far that this is written as a joke and would like to point out the challenges outlined here are the exact opposite of what someone who codes in JavaScript should do.
+Create a system of writing the most unreadable garbage code possible. Random Coding challenges will be used as examples to show of the progression of the system. This was obviously written as a joke that I took way to far. 
 
-## :mega: Rules
+## :mega: My Rules Setting out
 
-- [ ] using a minifier is cheating! (half the fun is writing the code! and it wont help anyways)
-- [ ] Do not use line breaks or semicolons unless necessary
-- [ ] How else would you write for/while loops without recursion?
-- [ ] Do not declare temporary variables outside of default parameters
-- [ ] Variable and Function names should not tell the reader what the variable/function does
-- [ ] Outside of the scope of the question it should be almost impossible to discern what the function or answer does.
-- [ ] Do not use If statements. Ternary statements are required instead. You better nest those statements if you need an if-else.
-- [ ] Don't forget to ABUSE JavaScript's type coercion
-- [ ] Remember it's not a hack if it works
+- [x] using a minifier is cheating! (half the fun is writing the code! and it wont help anyways)
 
-## Example
+- [x] Do not use line breaks or semicolons
+
+- [x] Variable and Function names should not tell the reader what the variable/function does
+
+- [x] Outside of the scope of the question it should be almost impossible to discern what the function does.
+
+- [x] Do not use `if` statements. Ternary statements are required instead. You better nest those statements if you need an `if-else`
+
+- [x] Don't forget to ABUSE JavaScript's type coercion
+
+- [x] Remember it's not a hack if it works
+
+## Example Problem
 
 ### Challenge
 
@@ -228,6 +228,7 @@ let _Z = (\u{73},\u{72}={},\u{69}=0) =>(!(-(~(+Object.keys(\u{73}).pop()))-i)?\u
 
 </details>
 
+---
 
 ## :tada:	Conclusion
 
