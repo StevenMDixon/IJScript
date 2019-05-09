@@ -188,9 +188,11 @@ const _I=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).po
 
 </details>
 
+---
+
 ### Challenge :seven:
 
-#### Challeng: 
+#### Challenge: 
 
 
 Write a funciton that counts all the occuring characters(UTF-8) in string. If you have string like this `aba` then the result should be { 'a': 2, 'b': 1 }
