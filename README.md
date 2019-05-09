@@ -188,6 +188,45 @@ const _I=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).po
 
 </details>
 
+### Challenge :seven:
+
+#### Challeng: 
+
+
+Write a funciton that counts all the occuring characters(UTF-8) in string. If you have string like this `aba` then the result should be { 'a': 2, 'b': 1 }
+
+What if the string is empty ? Then the result should be empty object literal `{ }`
+
+<details>
+<summary>Normal Answer</summary>
+<br>
+  
+```Javascript
+function count (string) {  
+  // The function code should be here
+   let test = {};
+   test = [...string].reduce((acc, cur)=>{
+   if(acc[cur])acc[cur] +=1;
+   else acc[cur] = 1;
+   return acc;
+   },{})
+   return test;
+}
+```
+
+</details>
+
+<details>
+<summary>BadJS Answer</summary>
+<br>
+  
+```Javascript
+let _Z = (\u{73},\u{72}={},\u{69}=0) =>(!(-(~(+Object.keys(\u{73}).pop()))-i)?\u{72}:_Z(\u{73},((r[\u{73}[i]]?r[\u{73}[i]]+=1:r[\u{73}[i]]=1)&&\u{72}),(-(~\u{69}))));
+```
+
+</details>
+
+
 ## :tada:	Conclusion
 
 JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
