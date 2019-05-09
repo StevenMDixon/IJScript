@@ -6,54 +6,82 @@ To put it lightly this may offend you, and you should be offended. However it wa
 
 JavaScript is a VERY quirky language, and I am going to show you how to write the worst code possible.
 
+## Functions
+
+Functions will serve as the corner stone for writing our bad javascript.
+
+All of the functions that are written will be concise arrow functions
+
+```JavaScript
+const example =()=>()
+```
+Fun facts about consice arrow functions
+
+1. These functions always have an implicit returns
+2. Statments are illegal
+3. Any thing requiring a block scope will throw an error (for/while/switch/function...)
+4. Everthing must be written as an expression.
+5. Thanks to ES6 default variables can be declared in the parameters of the function!
+
+```JavaScript
+
+const a = () =>('tomato')
+//always returns tomato
+const b = () =>(let c= 'test)
+//will throw an error
+const d = () =>(for(~){})
+//will throw an error
+const e = () =>(a < b? 1:2)
+// `if` and such must be written as an expression
+const f = (a=10) =>(a)
+// look at that block scoped variable, it's beautiful.
+```
+
+Unfortanately there is no way to get a block into one of these concise functions. So we will have to improvise, and improvisation is
+font of unintelligable code.
+
 ## :capital_abcd: Coercion
  
-Coercion is going to be your best freind on making your code more unreadable. Here are a few examples to help you out!
+If concise functions are the cornerstones then coercion will be the bricks. Coercion is probably the best part of JavaScript, It makes perfectly readable code into a almagamation off odd symbols and cryptic information. Let us see what coercion can do for us!
 
 ### === or the 'Strict Equal'
 
-In javascript if we want to check if something is equal we use the `===` statement. This is great and short however it is readable. Obviously something we don't want in our BadJavaScript code.
+In javascript if we want to check if something is equal we use the `===` statement. This is great and short however it is readable. Obviously something we don't want in our code.
 
-How do we get around this?
+So how do we get around this?
 
 There are two ways one with numbers, and one with strings.
 
 #### Numbers
 
-In javascript any number that is not 0 is `true`. From that we can devise if two numbers are `===`. given that we have two numbers 1, 2. The most practical way to test them is with subtraction.
+In javascript during operations any number that is not 0 is `true`. From this statement we can put together a plan to check if two numbers are equal. Given that we have two numbers (1, 2). The most practical way to test for equality is to use subtraction.
 
-`1 - 2 = -1 or 2 - 1 = 1` Either way javaSricpt will evaluate it to true.
+`1 - 2 = -1 or 2 - 1 = 1` Either way javaSricpt will evaluate the result to `true` during an operation.
 
-`2 - 2 = 0`  A number that is subtracted from itself is always 0 which is always false.
+`2 - 2 = 0`  A number that is subtracted from itself is always equal `0` which we know will always be `false`
+
+There for we can put together the following code:
 
 ```JavaScript
+let num a = 1;
+let num b = 2;
 
-if (1-2){
-  if any number but 0
-  return 'the numbers are not equal'
+if (a-b){
+  //when the results are not 0
+  // the numbers are not equal
+}else{
+  // the numbers are equal
 }
-// if 0
-return 'the numbers are equal'
-
 ```
+
+You can use `!` to invert the logic if needed, make sure to wrap the expression in paranthesis otherwise the first number will be evaluated then subtracted and then evaluated again. Simple right? Well we are in for a world of hurt when it comes to strings.
 
 ##### Strings
 
-Strings are a lot more complicated as `===` makes comparisions trivial. 
+Strings are a lot more complicated as `===` makes comparisions trivial. There are also a number of built in string functions that 
+these comparision simple. We don't want simple, We want unreadable and cryptic code!
 
-The best way I could think of would to use `localeCompare()`. 
-
-```JavaScript
-
-let a = 'test'.localCompare('test')
-// a equals 1 which is true.
-let b = 'test'.localCompare('t')
-// b equales 0 which is false
-
-```
-
-This works however it is readable. Instead we could use regex to make it less readable, I mean who actually learns regex :-)
-
+We could use Regex 
 ```JavaScript
 
 let text1 = 'test';
@@ -63,13 +91,29 @@ text2.search(new RegExp(`^${text1}$`,'g')) //Will return 0 if it matches and -1 
 //-1 is true and 0 is false so we need to use ! to flip that.
 
 ```
+However any programmer worth their salt knows regex. 
 
-Well I guess regex did not answer your question so lets try something fancier?
+Running out of ideas? 
 
-Looping seems to be the only way to determine whether a string matches another... That just won't do!
-So here is a great solution. JavaScript support string comparision with `>` and `<`. JS uses “dictionary” or “lexicographical” order while looping through the strings to determine if one is Greater/Less than the other.
+Well it's definitely gonna be hard to compare string with out loops, and we can't use `for` or `while`.
 
-So how can we exploit this? well if a string is equal to another then it is neither less than or greater than the other. If we write a expression that returns true when the string is greater than or less than the other string we can effectively create a comparision that replaces `===`
+What if I told you that JavaScript had a built in operator that loops through a string?
+
+Introducing `>` and his brother `<`!
+
+You have probably used these guys before without even thinking about what they actually do. 
+
+```JavaScript
+let n = ['bx', 'aa' ,'ab', 'a1']
+
+n.sort((a,b) => a < b);
+
+```
+During an operation that compares two `Strings` JavaScript will loop through both strings comparing each letter.
+
+This is perfect! So if we compare two strings and they are equal, they will be neither greater than or less than each other.
+
+We can use this to put together this code:
 
 ```JavaScript
 let a = 'test';
@@ -87,7 +131,13 @@ let b = 'Test'
 
 ### Bool/String/Number Coercion
 
-JavaScript is a weakly type language, and this is what allows us write BadJS. There are Two ways to convert different data types to other data types, Implicit and Explicit conversions. Explicit conversions are readable which means they are useless in BadJS.
+Remember JavaScript is a weakly type language. There are Two ways to convert different data types to other data types, Implicit and Explicit conversions. Explicit conversions are readable which means they are readable. Implicit conversions are where its at. 
+
+There are 3 main ways to convert data.
+- To Strings
+- To Numbers 
+- To Bools
+
 
 #### To Strings
 
@@ -178,8 +228,11 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 ## :traffic_light: If/Switch
 
 ### Ternary Statements
- 
-Need an `if`? use a ternary statement! Need an `else if`? Nest ternary statements! 
+
+Like states above any statements that require a block scope are off limits.
+
+So instead we need to write our if statements as expressions. Luckily JS has a built in way of doing this with ternary
+expressions.
 
 ```JavaScript
 
@@ -191,11 +244,11 @@ let d = a?a:b?a:c
 // what could d be? nobody knows! *its a... d = a*
 ```
 
-ternary statements are probably the worst offenders on the list of things you will read here.
+Reading through many style guides you will notice that Ternary statements are highly frowned upon. Most guides will say to exclude them and some guides will advise that you can use them but do not nest them.
 
 ### exclusive `&&`/`||`
 
-if you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned
+if you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned. This can be a valuable substitute for `if` statements.
 
 ```JavaScript
 
@@ -214,6 +267,9 @@ let c = a && (false||b);
 // heres a fun tid bit
 
 ```
+
+It is worth remembering that both sides of the comparison are evaluated before the comparison is evaluated. 
+
 
 ### The Comma operator `,`
 
@@ -251,41 +307,61 @@ function example(a){
 
 ```
 
+You can use this chain expressions together inside of a concise arrow function like so
+
+```JavaScript
+let r = (a=1) => (a+1, a)
+// a = 2 when called
+```
+
 ### switch/case
  
-Unfortunatly we don't really have access to the `switch` statement but we have the next best thing! 
+Well at this point it should be obvious why we cannot use `switch` statements. the curly bois `{}` refuse to do their job inside of concise functions.
 
-Let me introduce you to the Inline `MapSwitch`!
+I am a firm beleiver that anything can be written as an expression in JavaScript...
+
+So allow me to introduce you to the expressive `MapSwitch`!
 
 ```JavaScript
 
 let a = 1;
 
-let b = ({0:'a',1:'e'}[a]||true)
+let b = ({0:'a',1:'e'}[a])
 //a === 'e'  
 
 ```
 
-Now you might be thinking wait what about `default` that we can use in `switch` statemets? Amazingly if a was a number that was not in the object the statement returns undefined. As we know from coercion `undefined === false` so `undefined||''` always will return `''`.
+But what about `default`? what if my code absolutely needs a `default`?
+
+Well thats where we can get creative, remember our freinds `&&` and `||` from earlier?
+
+If you do you remember that both sides of the comparision are evaluated and the right side is always returned if the left is false.
+
+```JavaScript
+
+let a = 'sdkjfhslkhfd';
+
+let b = ({0:'a',1:'e'}[a]||'o')
+//a === 'o'  
+
+```
 
 
 ## for/of/in
   
-I feel as though I have failed you. Don't you remember we are trying to write unreadable code. You should not need to use these things. I mean you can, but you will have to make them unreadable.
-
-for statements cannot be written without `{` and `}`. so not realy useful in this instance.
+I feel as though I have failed you. Do you not remember how many time I explained that statements that require block scope will not work for this. 
   
-Fortunatly with much glee I am happy to tell you there is a way to iterate through things with out for loops or fancy prototype functions.
+Fortunatly for you with much glee I am happy to tell you there is a way to iterate through things with out for loops. 
  
  ### Iterators
  
- iterators are a fun exorcise in writing unreadable code, they obfuscate what your code is doing. So what if I told you we can Iterate any thing that can be turned into an array in javascript?
+Iterators are a fun exercise in writing unreadable code, they perfectly obfuscate what your code is doing. So what if I told you we can Iterate any thing that can be turned into an array in javascript?
  
- Let me introduce you to the equivalant of prototype.length but with Iterators
+Both `Array.prototype.values()` and `Array.prototype.entries()` return a iterator that contains the values of a string or array.
  
- both `Array.prototype.values()` and `Array.prototype.entries()` return a iterator that contains the values of a string or array.
+These are very obscure functions and it goes without saying iterators are very hard to keep up with.  
  
- These are very obscure functions and it goes without saying iterators are very hard to keep up with.  
+Let me introduce you to the equivalant of prototype.length but with Iterators
  
  ``` Javascript
  
@@ -297,7 +373,11 @@ Fortunatly with much glee I am happy to tell you there is a way to iterate throu
 
 ## :straight_ruler: Length Of Arrays/Strings
 
-Normally we would use Object.length in order to find the length of arrays or strings. JS has some interesting string functions
+Normally we would use Object.length in order to find the length of arrays or strings.
+
+But thats not gonna work here. we need something more.... desperate.
+
+what about string prototpye functions?
 
 ```JavaScript
 let test = "ipsum";
@@ -315,7 +395,7 @@ As this is bad javascript there is a better way. And its name is Object.keys(). 
 
 ```JavaScript
   
-  let a = +Object.keys('I am a text').pop();
+  let a = +Object.keys('I am a text').pop()+1;
   //this will give you the length of a string or array
   //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECCESARY TO ADD 1 TO GET THE ACTUAL LENGTH 
  
