@@ -486,3 +486,44 @@ let j = (-(~i))
 ```
 
 I want to say I understand how this works but I don't so here's a link to the [resource](https://www.geeksforgeeks.org/add-1-to-a-given-number/)
+
+
+## Code Golfing
+
+If you've never heard of it, it is crazy to see some of the stuff people come up with
+
+There are tons of replacements for common things 
+
+Like being able to replace alot of mathematical expressions like so
+
+```JavaScript
+
+//Math.ceil(n)
+  n%1?-~n:n
+
+//Math.floor(n)
+  ~~n
+  0|n
+
+//Math.abs(n)
+  n<0?-n:n
+
+//Math.round(n)
+  n+.5|0
+
+//Math.min(x,y)
+  x<y?x:y
+
+//Math.max(x,y)
+  y<x?x:y
+  
+```
+
+Heres the source that I ripped this from [here](https://codegolf.stackexchange.com/questions/2682/tips-for-golfing-in-javascript)
+
+
+## Conclusion
+
+This is all I have currently, I can't cover every possible situation. This has been an interesting adventure and if you have followed it all the way through I would like to thank you.
+
+Go forth and code poorly.
