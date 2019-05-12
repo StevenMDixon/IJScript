@@ -375,7 +375,7 @@ Let me introduce you to the equivalant of prototype.length but with Iterators
 
 Normally we would use Object.length in order to find the length of arrays or strings.
 
-But thats not gonna work here. we need something more.... desperate.
+But thats not gonna work here. we need something more.... crafty.
 
 what about string prototpye functions?
 
@@ -387,11 +387,13 @@ let length = test.lastIndexOf("");
 
 ```
 
-How does this work? well it's kind of apparent. JS starts at the end of the string searching for `""`. And Imagne that its at the end of the string!. It's kind of readable, would anyone suggest this instead of length? No. And unfortunatly this is a string prototype function which means it wont work on Arrays.
+How does this work? well it's kind of apparent. JS starts at the end of the string searching for `""`. And Imagine that its at the end of the string!. 
+
+This is kind of readable, would anyone suggest this instead of length? No. And unfortunately this is a string prototype function which means it wont work on Arrays.
 
 However...
 
-As this is bad javascript there is a better way. And its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
+Do not despair there is a better way. It lays within the the Object prototype, and its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
 
 ```JavaScript
   
@@ -401,7 +403,7 @@ As this is bad javascript there is a better way. And its name is Object.keys(). 
  
 ```
 
-How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the last index of an array. then + makes sure the returned item is an integer.
+How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the value of the last index of an array. then + coerces the returned item into a number.
 
 ## :cherries: Variable Names
 
@@ -474,7 +476,7 @@ I hate writing x+1 in my code, don't you?
 
 I mean its obvious we are adding 1 to an item.
 
-Here is a neat little trick to remove that problem
+Here is a neat little trick to remove that problem:
 
 ```JavaScript
 
