@@ -18,7 +18,7 @@ const example =()=>()
 Fun facts about consice arrow functions
 
 1. These functions always have an implicit returns
-2. Statments are illegal
+2. Statements and semicolons are illegal `let i = 1;`
 3. Any thing requiring a block scope will throw an error (for/while/switch/function...)
 4. Everthing must be written as an expression.
 5. Thanks to ES6 default variables can be declared in the parameters of the function!
