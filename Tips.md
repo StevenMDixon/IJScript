@@ -74,7 +74,20 @@ if (a-b){
 }
 ```
 
+the `^` operator
+
+`^` can also be used in this instance
+
+```
+
+let x = 3;
+// x^3  = 0
+ 
+```
+
+
 You can use `!` to invert the logic if needed, make sure to wrap the expression in paranthesis otherwise the first number will be evaluated then subtracted and then evaluated again. Simple right? Well we are in for a world of hurt when it comes to strings.
+
 
 ##### Strings
 
@@ -518,7 +531,10 @@ Like being able to replace alot of mathematical expressions like so
 
 //Math.max(x,y)
   y<x?x:y
-  
+
+//check if a letter is uppercase
+  'X'<{}
+  'x'<{}
 ```
 
 Heres the source that I ripped this from [here](https://codegolf.stackexchange.com/questions/2682/tips-for-golfing-in-javascript)
