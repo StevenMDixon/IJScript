@@ -1,120 +1,107 @@
-# :mortar_board: Tips on Writing BadJavaScript
+# :mortar_board: Tips on Writing IJScript
 
 Welcome to the tips section hopefully this will help you write some aweful javascript code.
 
-To put it lightly this may offend you, and you should be offended. However it was your curiousity that lead you here.
+To put it lightly this may offend you, and you should be offended. Was it not your own curiousity that lead you here.
 
-JavaScript is a VERY quirky language, and I am going to show you how to write the worst code possible.
+JavaScript is a VERY quirky language, and I am going to run through some tips that will let you write some of the worst Javascript.
+
+
+## preword 
+
+There are some advanced topics in the following tips some things you may want to be well versed in.
+
+- [Implicit coercion](https://dev.to/promhize/what-you-need-to-know-about-javascripts-implicit-coercion-e23)
+- [ES6](https://www.w3schools.com/js/js_es6.asp)
+- [Code Golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi)
+
+This tips page will try to go into some in depth info on some of these topics but if you find some of them too complex please take a read from one of the links above.
 
 ## :arrow_right: Functions
 
-Functions will serve as the corner stone for writing our bad javascript.
-
-All of the functions that are written will be `concise arrow functions`.
+Arrow Functions will serve as the base of our IJS experience.
 
 ```JavaScript
 const example =()=>()
 ```
-Fun facts about consice arrow functions
+Fun facts about Arrow functions
 
-1. These functions always have an implicit returns
-2. Statements and semicolons are illegal `let i = 1;`
-3. Any thing requiring a block scope will throw an error (for/while/switch/function...)
-4. Everthing must be written as an expression.
-5. Thanks to ES6 default variables can be declared in the parameters of the function!
+1. These functions always have an implicit returns (this removes the need to use `return`) 
+2. Any thing requiring a block scope will throw an error (for/while/switch/function...) (the only exception is an object but it must be wrapped in ())
+3. Everthing must be written as an expression. (this means Statements and semicolons are illegal `let i = 1;`)
+4. All default variables must be written into the parameters of the function (Thank you ES6)
 
 ```JavaScript
 
 const a = () =>('tomato')
-//always returns tomato
+// always returns tomato due to implicit returns
 const b = () =>(let c = 'test')
-//will throw an error
+// will throw an error
 const d = () =>(for(){})
-//will throw an error
+// will throw an error
 const e = () =>(a < b? 1:2)
 // `if` and such must be written as an expression
 const f = (a=10) =>(a)
-// look at that block scoped variable, it's beautiful.
+// perfect
 ```
-
-Unfortanately there is no way to get a block into one of these concise functions. So we will have to improvise, and improvisation is
-font of unintelligable code.
 
 ## :capital_abcd: Coercion
  
-If concise functions are the cornerstones then coercion will be the bricks. Coercion is probably the best part of JavaScript, It makes perfectly readable code into a almagamation off odd symbols and cryptic information. Let us see what coercion can do for us!
+Coercion is probably the best part of JavaScript, It makes perfectly readable code into a almagamation off odd symbols and cryptic information. Let us see what coercion can do for us! So how can we use it to make our code shorter and more unreadable.
 
-### === or the 'Strict Equal'
+There are two types of coercion in JavaScript: Explicit and Implicit.
 
-In javascript if we want to check if something is equal we use the `===` statement. This is great and short however it is readable. Obviously something we don't want in our code.
+Knowing both of these will be import in this section.
 
-So how do we get around this?
+### === 
 
-There are two ways one with numbers, and one with strings.
+In javascript if we want to check if something is equal we use `==` or the `===` statement. This should be avoided when writing IJS as there are many shorter ways of checking equality in JS.
 
 #### Numbers
 
-In javascript during operations any number that is not 0 is `true`. From this statement we can put together a plan to check if two numbers are equal. Given that we have two numbers (1, 2). The most practical way to test for equality is to use subtraction.
+In javascript during operations any number that is not 0 is `true`. This is because of implicit coercion.
 
-`1 - 2 = -1 or 2 - 1 = 1` Either way javaSricpt will evaluate the result to `true` during an operation.
+From this statement we can put together a plan to check if two numbers are equal. Given that we have two numbers (1, 2). The most practical way to test for equality is to use subtraction.
 
-`2 - 2 = 0`  A number that is subtracted from itself is always equal `0` which we know will always be `false`
-
-There for we can put together the following code:
+* Note: A normal location that uses implicit coercion is an `if` statement, however we will not have access to these while writing IJS. Instead we will have to use explicit coercion in places where implicit coercion does not happen.
 
 ```JavaScript
-let num a = 1;
-let num b = 2;
 
-if (a-b){
-  //when the results are not 0
-  // the numbers are not equal
-}else{
-  // the numbers are equal
-}
+console.log(!(a-b)) 
+// this will log true because of the explicit coercion
+
 ```
 
-the `^` operator
+the `^` operator or bitwise XOR 
 
-`^` can also be used in this instance
+`^` can also be used in this instance and is much shorter than a explicit conversion. 
+
+XOR works by comparing the bits between two numbers if the numbers bits are the same it returns 0. 
+
+* Note: XOR does not work with strings
 
 ```
 
 let x = 3;
 // x^3  = 0
+// 7^6 = -1
  
 ```
-
-
-You can use `!` to invert the logic if needed, make sure to wrap the expression in paranthesis otherwise the first number will be evaluated then subtracted and then evaluated again. Simple right? Well we are in for a world of hurt when it comes to strings.
-
 
 ##### Strings
 
 Strings are a lot more complicated as `===` makes comparisions trivial. There are also a number of built in string functions that 
 these comparision simple. We don't want simple, We want unreadable and cryptic code!
 
-We could use Regex 
-```JavaScript
+We could use Regex However any programmer worth their salt knows regex. 
 
-let text1 = 'test';
-let text2 = 'test';
-text2.search(new RegExp(`^${text1}$`,'g')) //Will return 0 if it matches and -1 if there are no matches
-//by specifying our our regex and using it inline our code becomes more complicated and less readable.
-//-1 is true and 0 is false so we need to use ! to flip that.
+We could loop throught the string and compare them but that is gonna be hard to compare string with out loops, and we can't use `for` or `while`.
 
-```
-However any programmer worth their salt knows regex. 
+What if I told you that JavaScript had a built in operator that loops through a string without use a string function or loop?
 
-Running out of ideas? 
+Introducing `>` and its brother `<`!
 
-Well it's definitely gonna be hard to compare string with out loops, and we can't use `for` or `while`.
-
-What if I told you that JavaScript had a built in operator that loops through a string?
-
-Introducing `>` and his brother `<`!
-
-You have probably used these guys before without even thinking about what they actually do. 
+You have probably used these guys before without even thinking about what they actually do (in the context of a string). 
 
 ```JavaScript
 let n = ['bx', 'aa' ,'ab', 'a1']
@@ -138,23 +125,16 @@ let b = 'Test'
 //this can be rewritten in many different ways
 (a > b || b > a)
 (b > a || a > b)
-(b > a || b > a)
 
 ```
 
 ### Bool/String/Number Coercion
 
-Remember JavaScript is a weakly type language. There are Two ways to convert different data types to other data types, Implicit and Explicit conversions. Explicit conversions are readable which means they are readable. Implicit conversions are where its at. 
-
-There are 3 main ways to convert data.
-- To Strings
-- To Numbers 
-- To Bools
-
+Remember that JavaScript is a weakly typed language. There are Two ways to convert different data types to other data types, Implicit and Explicit conversions.
 
 #### To Strings
 
-The `+` operater is the easiest and fastest way to convert any data type into a string. Another way is to use template literals this could be considered less readable at some points.
+The `+` operater is the easiest and fastest way to convert any data type into a string. Another way is to use template literals as this could be considered less readable at some point.
 
 ```JavaScript
 
@@ -196,6 +176,12 @@ true | 0        // implicit
 ```
 
 JavaScript will trim whitespaces from string before converting it to a number. (This includes `\n` and `\t`)
+
+
+```Javasctipt
+ +'   1   '+''
+ // this a an alternative to string.trim()
+```
 
 Remember that NaN !== NaN or anything else, this is important because if you implicitly convert something to a number and JS spits out NaN all comparisions will fail.
 
@@ -242,9 +228,9 @@ Empty arrays and Objects are converted to true as well. (Arrays are converted to
 
 ### Ternary Statements
 
-Like states above any statements that require a block scope are off limits.
+Because we are using concise arrow functions any statements that require a block scope are off limits.
 
-So instead we need to write our if statements as expressions. Luckily JS has a built in way of doing this with ternary
+So instead we need to write our if statements as expressions. Luckily JavaScript has a built in way of doing this with ternary
 expressions.
 
 ```JavaScript
@@ -257,11 +243,11 @@ let d = a?a:b?a:c
 // what could d be? nobody knows! *its a... d = a*
 ```
 
-Reading through many style guides you will notice that Ternary statements are highly frowned upon. Most guides will say to exclude them and some guides will advise that you can use them but do not nest them.
+Reading through different style guides you will notice that ternary statements are often frowned upon. Most guides will say to exclude them and some guides will advise that you can use them but do not nest them. But they are the best use case for IJS.
 
 ### exclusive `&&`/`||`
 
-if you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned. This can be a valuable substitute for `if` statements.
+If you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned. This can be a valuable substitute for `if` statements.
 
 ```JavaScript
 
@@ -277,8 +263,6 @@ let c = a && (false||b);
 
 // what do you think c equals? its 'grapes'!
 
-// heres a fun tid bit
-
 ```
 
 It is worth remembering that both sides of the comparison are evaluated before the comparison is evaluated. 
@@ -286,21 +270,19 @@ It is worth remembering that both sides of the comparison are evaluated before t
 
 ### The Comma operator `,`
 
-wait `,` is an operator? like `>` or `&&`? Yes!
+`,` is an operator? like `>` or `&&`? Yes!
 
-what would you say `console.log(5, 10)` prints? 
+What would you say `console.log(5, 10)` prints? 
 
 `5 10` is the correct answer, how about `console.log((5, 10))`?
 
 You would think `(5, 10)` but in fact it prints `10`.
 
-Why? well JavaScript actually has an operator called the `comma operator` and it always return the farthest right item in an expression.
+Why? well JavaScript actually has something called the `comma operator` and it always return the farthest right item in an expression.
 
 For instance `(1, 3, 4)` will always evaluate to `4`.
 
 remember everything in the expression is evaluated!
-
-Of course this is exploitable... 
 
 ```JavaScript
 let a = 'apples';
@@ -329,9 +311,7 @@ let r = (a=1) => (a+1, a)
 
 ### switch/case
  
-Well at this point it should be obvious why we cannot use `switch` statements. the curly bois `{}` refuse to do their job inside of concise functions.
-
-I am a firm beleiver that anything can be written as an expression in JavaScript...
+Well at this point it should be obvious why we cannot use `switch` statements. The curly bois `{}` refuse to do their job inside of concise functions.
 
 So allow me to introduce you to the expressive `MapSwitch`!
 
@@ -362,9 +342,7 @@ let b = ({0:'a',1:'e'}[a]||'o')
 
 ## for/of/in
   
-I feel as though I have failed you. Do you not remember how many time I explained that statements that require block scope will not work for this. 
-  
-Fortunatly for you with much glee I am happy to tell you there is a way to iterate through things with out for loops. 
+Fortunatly there is a way to iterate through things in ES6 with out for loops. 
  
  ### Iterators
  
@@ -388,7 +366,7 @@ Let me introduce you to the equivalant of prototype.length but with Iterators
 
 Normally we would use Object.length in order to find the length of arrays or strings.
 
-But thats not gonna work here. we need something more.... crafty.
+But that's just not gonna work here. we need something more.... crafty.
 
 what about string prototpye functions?
 
@@ -397,7 +375,6 @@ let test = "ipsum";
 
 let length = test.lastIndexOf("");
 //length now equals the length of the string.
-
 ```
 
 How does this work? well it's kind of apparent. JS starts at the end of the string searching for `""`. And Imagine that its at the end of the string!. 
@@ -409,18 +386,16 @@ However...
 Do not despair there is a better way. It lays within the the Object prototype, and its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
 
 ```JavaScript
-  
   let a = +Object.keys('I am a text').pop()+1;
   //this will give you the length of a string or array
   //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECCESARY TO ADD 1 TO GET THE ACTUAL LENGTH 
- 
 ```
 
 How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the value of the last index of an array. then + coerces the returned item into a number.
 
-## :cherries: Variable Names
+This is being crafty however the comparision in length of code bewteen this and Object.length is quite large, so it is up to the writer if they want shorter or less readable code in this instance. 
 
-Variable Names are the cherries on top of this giant stinking mess.
+## :cherries: Variable Names
 
 For some reason the javascript allow unicode gliphs for 'Identifiers'.
 
@@ -483,7 +458,10 @@ console.log(obj['🧡'])
 // hello
 
 ```
-## :sushi: +1
+
+Not super useful but it adds a level of ugliness in our code.
+
+## :sushi: +1 -1
 
 I hate writing x+1 in my code, don't you?
 
@@ -497,6 +475,8 @@ let i = 1;
 
 let j = (-(~i))
 // j = 2
+let k = (~(-i))
+// k = 0
 
 ```
 
