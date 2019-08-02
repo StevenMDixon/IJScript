@@ -1,8 +1,12 @@
 # :japanese_goblin: IJScript
 
-IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascripts coercion to create a guide on writing this "style" of code. In no way should this code be used in any professional enviroment.
+IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascript coercion to create a guide on writing this "style" of code. In no way should this code be used in any professional enviroment.
 
 This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
+
+What does the I stand for in IJS?
+
+Incomprehensible or indecipherable or inconceivable or maybe even any adjective that starts with I.
 
 ## :dart: Goal
 
