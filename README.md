@@ -1,47 +1,29 @@
 # :japanese_goblin: IJScript
 
-IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascript coercion to create a guide on writing this "style" of code. 
+IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascript coercion to create a guide on writing this *style* of code. 
 
 This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
 
 What does the **I** stand for in IJS?
 
-Incomprehensible or indecipherable or inconceivable.
+Incomprehensible, indecipherable or inconceivable.
 
 ## :dart: Goal
 
 Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write the code.
 
-## Example Problem
+## Methodology
 
-### Challenge
-
-Have the function G take the str parameter being passed and return the string in reversed order. For example: if the input string is "Hello World and Coders" then your program should return the string “sredoC dna dlroW olleH”. 
-
-Normal Answer:
-
-``` JavaScript
-function G(str) {  
-  return str.split("").reverse().join("");       
-}
-```
-Minified Code:
-
-```JavaScript
- function G(str){return str.split("").reverse().join("")}
-```
-
-IJScript Answer:
-
-``` JavaScript
-const _G=(s,e,n=+Object.keys(s+' ').pop())=>(!n?e:_G(s,e+s[n],n-1))
-```
+- [x] All answers should be as short and unreadable as possible.
+  - Even if an answer would be shorter the more unreadable answer should be used.
+- [x] All answers must be resolved in a single concise arrow function
+- [x] Minifiers should never be used.
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
 One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?" 
 
-## :memo: Log
+## :memo: Problems
 
 ### Challenge :one:
 
