@@ -1,12 +1,12 @@
 # :japanese_goblin: IJScript
 
-IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascript coercion to create a guide on writing this "style" of code. In no way should this code be used in any professional enviroment.
+IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascript coercion to create a guide on writing this "style" of code. 
 
 This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
 
-What does the I stand for in IJS?
+What does the **I** stand for in IJS?
 
-Incomprehensible or indecipherable or inconceivable or maybe even any adjective that starts with I.
+Incomprehensible or indecipherable or inconceivable.
 
 ## :dart: Goal
 
@@ -39,7 +39,7 @@ const _G=(s,e,n=+Object.keys(s+' ').pop())=>(!n?e:_G(s,e+s[n],n-1))
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
-We can obviously tell what a normal answer does, because its readable. No comments are needed if you know what the higher order functions from String and Array do. The bad answer is almost unreadable, no brackets no higher order functions that tell us what exactly is going on in the function just pure unreadable chaos. Without any comments or the challenge notes it would take a while to decode exactly what this function does.
+One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?" 
 
 ## :memo: Log
 
@@ -221,6 +221,11 @@ let _Z = (\u{73},\u{72}={},\u{69}=0) =>(!(-(~(+Object.keys(\u{73}).pop()))-i)?\u
 ## :tada:	Conclusion
 
 JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
+
+Why did you create this *"thing"*?
+
+I really liked the Idea of code golfing but quickly realized that it in itself is a game and has almost no place inside of a proper workplace. I also love those 60's scifi horror movies where the evil thing is just something taken to the extreme in an impossible situation.
+So this is my version of code golfing taken to an extreme. I also really like JavaScript and all the quirks that the language contains, this was a great learning experience.
 
 ### Guides on writing good code!
 
