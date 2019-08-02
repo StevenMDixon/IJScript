@@ -1,28 +1,12 @@
-# :japanese_goblin: BadJavaScript
+# :japanese_goblin: IJScript
 
-BadJS is a testament to how unreadable code can get without style guides, comments, and general best practices.
+IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascripts coercion to create a guide on writing this "style" of code. In no way should this code be used in any professional enviroment.
 
-Proceed with Caution. If you do get inspired [here](https://github.com/StevenDixonDev/BadJavaScript/blob/master/Tips.md) are all the tips I have on writing BadJS.
+This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
 
 ## :dart: Goal
 
-Create a system of writing the most unreadable garbage code possible. Random Coding challenges will be used as examples to show of the progression of the system. This was obviously written as a joke that I took way to far. 
-
-## :mega: My Rules Setting out
-
-- [x] using a minifier is cheating! (half the fun is writing the code! and it wont help anyways)
-
-- [x] Do not use line breaks or semicolons
-
-- [x] Variable and Function names should not tell the reader what the variable/function does
-
-- [x] Outside of the scope of the question it should be almost impossible to discern what the function does.
-
-- [x] Do not use `if` statements. Ternary statements are required instead. You better nest those statements if you need an `if-else`
-
-- [x] Don't forget to ABUSE JavaScript's type coercion
-
-- [x] Remember it's not a hack if it works
+Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write the code.
 
 ## Example Problem
 
@@ -43,7 +27,7 @@ Minified Code:
  function G(str){return str.split("").reverse().join("")}
 ```
 
-BadJavaScript Answer:
+IJScript Answer:
 
 ``` JavaScript
 const _G=(s,e,n=+Object.keys(s+' ').pop())=>(!n?e:_G(s,e+s[n],n-1))
@@ -83,13 +67,13 @@ const _U = (num1, num2)=>{
 }
 ```
 
-Not a perfect answer in terms of speed, however it is more readable than the bad JS answer.
+Not a perfect answer in terms of speed, however it is more readable than the IJScript answer.
 
 </details>
 
 
 <details>
-<summary>BadJavaScript Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```JavaScript
@@ -108,7 +92,7 @@ Not a perfect answer in terms of speed, however it is more readable than the bad
 Have the function take the parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. 
 
 <details>
-<summary>BadJavaScript Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```Javascript
@@ -126,7 +110,7 @@ Have the function take the parameter being passed and return the factorial of it
 Have the function _Q(n,m) take both parameters being passed and return the string true if m is greater than n, otherwise return the string false. If the parameter values are equal to each other then return the string -1. 
 
 <details>
-<summary>BadJavaScript Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```Javascript
@@ -143,7 +127,7 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
 <details>
-<summary>BadJavaScript Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```Javascript
@@ -161,7 +145,7 @@ const _Z = (a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:_Z(a,
 Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
 
 <details>
-<summary>BadJavaScript Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```JavaScript
@@ -179,7 +163,7 @@ const _O = (a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:_O(a,b+({0:'(',3:') '
 Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
 
 <details>
-<summary>BadJavaScript Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```Javascript
@@ -219,7 +203,7 @@ function count (string) {
 </details>
 
 <details>
-<summary>BadJS Answer</summary>
+<summary>IJScript Answer</summary>
 <br>
   
 ```Javascript
@@ -234,7 +218,7 @@ let _Z = (\u{73},\u{72}={},\u{69}=0) =>(!(-(~(+Object.keys(\u{73}).pop()))-i)?\u
 
 JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
 
-### Guides on writing actual good code!
+### Guides on writing good code!
 
 - [Air BnB Style Guide](https://github.com/airbnb/javascript)
 - [Google Style Guide](https://google.github.io/styleguide/jsguide.html)
