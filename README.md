@@ -18,6 +18,7 @@ Create a system of writing the most unreadable code possible. Random Coding chal
   - Even if an answer would be shorter the more unreadable answer should be used.
 - [x] All answers must be resolved in a single concise arrow function
 - [x] Minifiers should never be used.
+- [x] Math is your best friend at the end of the day
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
