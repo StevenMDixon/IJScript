@@ -102,7 +102,7 @@ look at all these optimizations
 1. We dont need to check the arrays length since when i is greater than 10 a[i] == undefined which is false and adding to undefined === NaN
 2. All i+1 or i+=1 can be replaced with -~1
 3. We saved some bytes by changing the object into an array and dividing the index by 3
-
+4. Remove all white spaces
 
 ## Fin
 
