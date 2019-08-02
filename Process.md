@@ -8,7 +8,7 @@ This methodology can be broken down into some simple steps, however this is goin
 
 1. Locate an issue
 2. Solve the problem using plain JS
-3. Replace parts of readable codes and decide code flow
+3. Apply IJS methodology
 4. Profit
 
 ## Locating a Problem to solve
