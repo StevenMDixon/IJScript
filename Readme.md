@@ -10,7 +10,7 @@ Incomprehensible, indecipherable or inconceivable.
 
 ## :dart: Goal
 
-Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write the code.
+Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write IJS.
 
 ## Methodology
 
@@ -18,11 +18,19 @@ Create a system of writing the most unreadable code possible. Random Coding chal
   - Even if an answer would be shorter the more unreadable answer should be used.
 - [x] All answers must be resolved in a single concise arrow function
 - [x] Minifiers should never be used.
-- [x] Math is your best friend at the end of the day
+- [x] Math and Coercion are your best friend at the end of the day
+
+One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
-One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?" 
+## Example
+
+A simple caclulator function that takes three arguments
+
+```JavaScript
+const c=(o,n1,n2)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||'undefined operator');
+```
 
 ## Challenges
 
