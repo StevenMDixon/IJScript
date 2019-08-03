@@ -2,10 +2,7 @@
 
 Welcome to the tips section hopefully this will help you write some aweful javascript code.
 
-To put it lightly this may offend you, and you should be offended. Was it not your own curiousity that lead you here.
-
 JavaScript is a VERY quirky language, and I am going to run through some tips that will let you write some of the worst Javascript.
-
 
 ## preword 
 
@@ -51,7 +48,7 @@ Coercion is probably the best part of JavaScript, It makes perfectly readable co
 
 There are two types of coercion in JavaScript: Explicit and Implicit.
 
-Knowing both of these will be import in this section.
+Knowing both of these will be important in this section.
 
 ### === 
 
@@ -92,8 +89,6 @@ let x = 3;
 
 Strings are a lot more complicated as `===` makes comparisions trivial. There are also a number of built in string functions that 
 these comparision simple. We don't want simple, We want unreadable and cryptic code!
-
-We could use Regex However any programmer worth their salt knows regex. 
 
 We could loop throught the string and compare them but that is gonna be hard to compare string with out loops, and we can't use `for` or `while`.
 
@@ -393,58 +388,43 @@ Do not despair there is a better way. It lays within the the Object prototype, a
 
 How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the value of the last index of an array. then + coerces the returned item into a number.
 
-This is being crafty however the comparision in length of code bewteen this and Object.length is quite large, so it is up to the writer if they want shorter or less readable code in this instance. 
+This is being crafty however the comparision in length of code bewteen this and Object.length is quite large, so it is up to the writer if they want shorter or less readable code in this instance.
+
+A shorter way is to abuse our friend coercion while using some funky math
+
+```
+// Given i is our index
+// and a is our array or string
+
+a[i]+i+1 
+
+```
+
+This equation will equal true until i exceeds the lenght of the array, at that point a[i] = undefined and in JS undefined + any number equals NaN. Which is false in any logical context.
 
 ## :cherries: Variable Names
 
 For some reason the javascript allow unicode gliphs for 'Identifiers'.
 
-This means that you can use var \u0061 and var a interchangeably. Similarly, since var 1 is invalid, so is var \u0031.
+For the purposes of IJS these formats are a little to long (\u0061, \u{61} both being 6 characters long)
 
-To note we can use `\u{74}\u{65}\u{73}\u{74}` or `\u0074\u0065\u0073\u0074` formats.
+what we really want are the glyphs that take up one character and are not very readable.
 
-Luckily some one was nice enough to create a nice little site that verifies if a unicode string is viable as an identifier [Here](https://mothereff.in/js-variables)
+Note* while this is neat and can add some obfuscation to your code `ʘ` is just as unreadble as `a` in instances where you cannot tell what the variable is any. Also you can use character from other languages such as `ε` and `草` 
 
-In the example bellow our variable can be call by either `aa` or `a\u{61}`. This is great for obfuscation!
+Glyphs examples:
 
-```JavaScript
+`☉, ⊙, ಠ, ∏, Π, П`
 
-let a\u{61} = 'test';
+Full list of [Glyohs](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
 
-console.log(a\u{61})
-console.log(aa)
-
-//we can also use gliphs like this 
+```JavaScript 
 
 let ಠ_ಠ = 6;
 
 console.log(ಠ_ಠ)
 // 6
 
-//Numbers can be written as follows
-
-let i = +('\u{31}\u{36}');
-// i = 16
-
-// You cannot use unicode as paramaters when declaring a function
-const badFunc = (/0032) =>{
-
-}
-// We can however pass in unicode identifiers or refer to the paramaters by their unicode equivalant
-
-let g = 'hello squirrel'
-
-const gFunc = (s) =>{
- console.log(\u{73})
-}
-
-gFunc(\u{67})
-```
-
-Here is a Quick function to convert Text to Unicode using unicode~!.
-
-```JavaScript 
-const _tU =(s,o='',i=0)=>(!((+Object.keys(s).pop()+1)-i)?o:_tU(\u{73},\u{6f}+'\\u{'+s.charCodeAt(i).toString(+('\u{31}\u{36}'))+'}', \u{69}+1));
 ```
 
 Quick aside about Emojis.
@@ -461,7 +441,7 @@ console.log(obj['🧡'])
 
 Not super useful but it adds a level of ugliness in our code.
 
-## :sushi: +1 -1
+## :sushi: x+1 x-1
 
 I hate writing x+1 in my code, don't you?
 
