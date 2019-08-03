@@ -8,11 +8,11 @@ What does the **I** stand for in IJS?
 
 Incomprehensible, indecipherable or inconceivable.
 
-## :dart: Goal
+## :dart: The Goal of IJS
 
 Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write IJS.
 
-## Methodology
+## :art: The Methodology
 
 - [x] All answers should be as short and unreadable as possible.
   - Even if an answer would be shorter the more unreadable answer should be used.
@@ -32,11 +32,11 @@ A simple caclulator function that takes three arguments
 const c=(o,n1,n2)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||'undefined operator');
 ```
 
-## Challenges
+## :100: The Challenges
 
 Check out the [Creations Page](Creations.md) for some challenges.
 
-## :tada:	Conclusion
+## :tada:	The Conclusion
 
 JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
 
