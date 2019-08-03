@@ -194,7 +194,7 @@ function count (string) {
 <br>
   
 ```Javascript
-let _Z = (\u{73},\u{72}={},\u{69}=0) =>(!(-(~(+Object.keys(\u{73}).pop()))-i)?\u{72}:_Z(\u{73},((r[\u{73}[i]]?r[\u{73}[i]]+=1:r[\u{73}[i]]=1)&&\u{72}),(-(~\u{69}))));
+let z=(a,o={},i=0)=>(a[i]+i+1?z(a,((o[a[i]]+=1)||(o[a[i]]=1), o),-~i):o)
 ```
 
 </details>
