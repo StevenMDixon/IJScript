@@ -183,6 +183,12 @@ let z=(a,o={},i=0)=>(a[i]+i+1?z(a,((o[a[i]]+=1)||(o[a[i]]=1), o),-~i):o)
 
 ``` JavaScript
 
-const t = (o,n1,n2) => ({'m': n1*+n2,'a': +n1+(+n2),'s': n1-+n2,'d': n1/+n2,'p': (n1**+n2)}[o[0]] || 'undefined operator');
+const t = (o,n1,n2) => ({'m': n1*+n2,'a': +n1+(+n2),'s': n1-+n2,'d': n1/+n2,'p': (n1**+n2)}[o[0]] || 'undefined operator')
 
+```
+
+### FizzBuzz
+
+```
+f =(n,g='')=>(n%3||(g+='fizz'),(n%5||(g+='buzz')),g||n)
 ```
