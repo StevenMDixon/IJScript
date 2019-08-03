@@ -240,7 +240,7 @@ let d = a?a:b?a:c
 
 Reading through different style guides you will notice that ternary statements are often frowned upon. Most guides will say to exclude them and some guides will advise that you can use them but do not nest them. But they are the best use case for IJS.
 
-### exclusive `&&`/`||`
+### Overloading `&&`/`||`
 
 If you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned. This can be a valuable substitute for `if` statements.
 
@@ -277,7 +277,7 @@ Why? well JavaScript actually has something called the `comma operator` and it a
 
 For instance `(1, 3, 4)` will always evaluate to `4`.
 
-remember everything in the expression is evaluated!
+this is also referred to as chaining. Remember everything in the expression is evaluated!
 
 ```JavaScript
 let a = 'apples';
@@ -337,9 +337,9 @@ let b = ({0:'a',1:'e'}[a]||'o')
 
 ## for/of/in
   
-Fortunatly there is a way to iterate through things in ES6 with out for loops. 
+Fortunatly there is a couple ways to iterate through things without for loops. 
  
- ### Iterators
+### Iterators
  
 Iterators are a fun exercise in writing unreadable code, they perfectly obfuscate what your code is doing. So what if I told you we can Iterate any thing that can be turned into an array in javascript?
  
@@ -349,13 +349,29 @@ These are very obscure functions and it goes without saying iterators are very h
  
 Let me introduce you to the equivalant of prototype.length but with Iterators
  
- ``` Javascript
+ ```Javascript
  
- const test=(e,d=[...e].values(),c=0)=>(r=>!(r)?c:test(e,d,c+1))(d.next().value)
+ const t=(e,d=[...e].values(),c=0)=>(r=>!(r)?c:t(e,d,c+1))(d.next().value)
  
  ```
  
  `Array.prototype.values()` is a nice little bit of code that returns an `Iterator Object` with one property, `next()`. When next hits the end of an array its value is returned as `undefined`. Using IIFE we can create functions that Iterate with out parameter or variables for an index.
+ 
+### Recursion
+
+Iterators are great but they add a little more overhead to a function that plain old recursion can solve in a shorter amount of code.
+
+The same function above with recursion
+
+```Javascript
+
+const t=(e,c=0)=>(e[c]+c+1?t(e,-~c):c)
+
+```
+
+It is pretty obvious which one wins in terms of length.
+
+This example is a good starting point for writing any IJS function that needs to loop through an array or string.
 
 ## :straight_ruler: Length Of Arrays/Strings
 
