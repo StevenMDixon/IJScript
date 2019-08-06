@@ -1,12 +1,12 @@
 # :japanese_goblin: IJScript
 
-IJS is an attempt to write the most unreadable javascript. I have spent hours looking over code golf answers and playing with javascript coercion to create a guide on writing this *style* of code. 
+![badge](https://img.shields.io/badge/Version-1.0-green)
 
-This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
+What is IJScript? IJS is an attempt to write the most unreadable javascript code, and develope a style of formatting code that can be resused for multiple purposes.
 
-What does the **I** stand for in IJS?
+This entire repo was inspired by code golf and snarky comments. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
 
-Incomprehensible, indecipherable or inconceivable.
+What does the **I** stand for in IJS? Incomprehensible, indecipherable or inconceivable.
 
 ## :dart: The Goal of IJS
 
@@ -23,15 +23,17 @@ Create a system of writing the most unreadable code possible. Random Coding chal
 
 One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"
 
-![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
-
 ## Example
 
 A simple caclulator function that takes three arguments
 
 ```JavaScript
-const c=(o,n1,n2)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||'undefined operator');
+c=(o,n1,n2)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||'undefined operator');
 ```
+
+This is a good example of IJS. Short and otherwise unreadable code, unless given context.
+
+![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
 ## :100: The Challenges
 
