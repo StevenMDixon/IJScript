@@ -18,7 +18,7 @@ Create a system of writing the most unreadable code possible. Random Coding chal
   - Even if an answer would be shorter the more unreadable answer should be used.
 - [x] All answers must be resolved in a single concise arrow function
 - [x] Minifiers should never be used.
-- [x] Math and Coercion are your best friend at the end of the day
+- [x] Math and Coercion are your best friends at the end of the day
 
 One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"
 
