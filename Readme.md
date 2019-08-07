@@ -19,7 +19,6 @@ Create a system of writing the most unreadable code possible. Random Coding chal
 - [x] All answers must be resolved in a single concise arrow function
 - [x] Minifiers should never be used.
 - [x] Math and Coercion are your best friend at the end of the day
-- [x] No using custom functions or namespaces, check out the code golf rules for more info
 
 One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"
 
