@@ -16,7 +16,7 @@ This tips page will try to go into some in depth info on some of these topics bu
 
 ## :arrow_right: Functions
 
-Arrow Functions will serve as the base of our IJS experience.
+Arrow Functions or Lambda Functions will serve as the base of our IJS experience.
 
 ```JavaScript
 const example =()=>()
