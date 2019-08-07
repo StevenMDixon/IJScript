@@ -414,6 +414,10 @@ A shorter way is to abuse our friend coercion while using some funky math
 
 a[i]+i+1 
 
+vs.
+
+a[i] >= a.length
+
 ```
 
 This equation will equal true until i exceeds the lenght of the array, at that point a[i] = undefined and in JS undefined + any number equals NaN. Which is false in any logical context.
@@ -457,7 +461,25 @@ console.log(obj['🧡'])
 
 Not super useful but it adds a level of ugliness in our code.
 
-## :sushi: x+1 x-1
+## :eyes: Obfuscation
+
+one of the core tenants of IJS is writing JavaScript that is harder to read. There are multiple instances where we can use math to write code that does the exact same thing in the same amount of characters or less.
+
+### Even or Odd?
+
+Normally we would use modulo`%` in order to determine if an number is even or odd. instead we can use bitwise operator to check, the logic will be inverted though.
+
+```JavaScript 
+
+n%2 === ! n|1 
+
+n%3 === n|1
+
+n%2 === ! n&1
+
+```
+
+### :sushi: x+1 x-1
 
 I hate writing x+1 in my code, don't you?
 
@@ -467,19 +489,17 @@ Here is a neat little trick to remove that problem:
 
 ```JavaScript
 
-let i = 1;
-
-let j = (-(~i))
+let j = (-(~1))
 // j = 2
-let k = (~(-i))
+
+let k = (~(-1))
 // k = 0
 
 ```
 
 I want to say I understand how this works but I don't so here's a link to the [resource](https://www.geeksforgeeks.org/add-1-to-a-given-number/)
 
-
-## Code Golfing
+### :golf: Code Golfing
 
 If you've never heard of it, it is crazy to see some of the stuff people come up with
 
