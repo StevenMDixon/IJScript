@@ -69,7 +69,7 @@ console.log(!(a-b))
 
 ```
 
-the `^` operator or bitwise XOR 
+###### the `^` operator or bitwise XOR 
 
 `^` can also be used in this instance and is much shorter than a explicit conversion. 
 
@@ -262,6 +262,15 @@ let c = a && (false||b);
 
 It is worth remembering that both sides of the comparison are evaluated before the comparison is evaluated. 
 
+### check if a string is empty or a number is 0
+
+A usefull tool is checking if a string is empty, this can be accomplished by overloading the `||` operator.
+
+```JavaScript
+n||0  ~  n.length === 0
+```
+
+if `n` is a non empy string or non zero number this expression will return `n` or zero which is false. 
 
 ### The Comma operator `,`
 
@@ -312,21 +321,6 @@ So allow me to introduce you to the expressive `MapSwitch`!
 
 ```JavaScript
 
-let a = 1;
-
-let b = ({0:'a',1:'e'}[a])
-//a === 'e'  
-
-```
-
-But what about `default`? what if my code absolutely needs a `default`?
-
-Well thats where we can get creative, remember our freinds `&&` and `||` from earlier?
-
-If you do you remember that both sides of the comparision are evaluated and the right side is always returned if the left is false.
-
-```JavaScript
-
 let a = 'sdkjfhslkhfd';
 
 let b = ({0:'a',1:'e'}[a]||'o')
@@ -334,6 +328,18 @@ let b = ({0:'a',1:'e'}[a]||'o')
 
 ```
 
+The overloaded `||` is used to define a defualt statement for the switch.
+
+This can also be expressed using an array when working with numbers
+
+```JavaScript
+let a = 10
+
+let b = ['s','h',1][a/5]||'0'
+
+```
+
+In this instance the result of dividing a by 5 is used to access the index in the array. if a/5 has a remainder or the index is not specified the default is returned.
 
 ## for/of/in
   
@@ -392,9 +398,7 @@ How does this work? well it's kind of apparent. JS starts at the end of the stri
 
 This is kind of readable, would anyone suggest this instead of length? No. And unfortunately this is a string prototype function which means it wont work on Arrays.
 
-However...
-
-Do not despair there is a better way. It lays within the the Object prototype, and its name is Object.keys(). In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
+Object.keys() is another way to hanlde the length issue. In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
 
 ```JavaScript
   let a = +Object.keys('I am a text').pop()+1;
