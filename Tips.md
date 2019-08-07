@@ -489,10 +489,10 @@ Here is a neat little trick to remove that problem:
 
 ```JavaScript
 
-let j = (-(~1))
+let j = -~1
 // j = 2
 
-let k = (~(-1))
+let k = ~-1
 // k = 0
 
 ```
