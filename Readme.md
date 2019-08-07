@@ -2,9 +2,9 @@
 
 ![badge](https://img.shields.io/badge/Version-1.0-green)
 
-What is IJScript? IJS is an attempt to write the most unreadable javascript code, and develope a style of formatting code that can be resused for multiple purposes.
+What is IJScript? IJS is an attempt to write the most unreadable and short javascript code possible, and to develope a style of formatting code that can be resused.
 
-This entire repo was inspired by code golf and snarky comments. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). 
+This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). It is worth noting that this entire idea is a subset of Code golfing because it relies on the same core idea.
 
 What does the **I** stand for in IJS? Incomprehensible, indecipherable or inconceivable.
 
@@ -14,10 +14,8 @@ Create a system of writing the most unreadable code possible. Random Coding chal
 
 ## :art: The Methodology
 
-- [x] All answers should be as short and unreadable as possible.
-  - Even if an answer would be shorter the more unreadable answer should be used.
-- [x] All answers must be resolved in a single concise arrow function
-- [x] Minifiers should never be used.
+- [x] All answers should be as short and unreadable as possible
+- [x] All answers must be resolved in a single lambda expression
 - [x] Math and Coercion are your best friends at the end of the day
 
 One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"
@@ -27,7 +25,7 @@ One of the core principles of programming is writing readable code. IJS throws t
 A simple caclulator function that takes three arguments
 
 ```JavaScript
-c=(o,n1,n2)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||'undefined operator');
+c=(o,n1,n2,a)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||a+' operator');
 ```
 
 This is a good example of IJS. Short and otherwise unreadable code, unless given context.
@@ -38,13 +36,16 @@ This is a good example of IJS. Short and otherwise unreadable code, unless given
 
 Check out the [Creations Page](Creations.md) for some challenges.
 
-## :tada:	The Conclusion
+## :tada:	The Conclusion 
 
-JavaScript is a very quirky language and can be written several different ways. Not all these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers and it should stay like that. If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
+JavaScript is a very quirky language and it can be written several different ways. Not all of these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers.
+
+If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
 
 Why did you create this *"thing"*?
 
-I really liked the Idea of code golfing but quickly realized that it in itself is a game and has almost no place inside of a proper workplace. I also love those 60's scifi horror movies where the evil thing is just something taken to the extreme in an impossible situation.
+I really liked the Idea of code golfing but quickly realized that it in itself is a game and has almost no place inside of a proper workplace. I also love those 60's scifi horror movies where the evil 'thing' is just some idea taken to the extreme in an impossible situation.
+
 So this is my version of code golfing taken to an extreme. I also really like JavaScript and all the quirks that the language contains, this was a great learning experience.
 
 ### Guides on writing good code!
