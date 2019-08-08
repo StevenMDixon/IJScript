@@ -121,6 +121,10 @@ let b = 'Test'
 (a > b || b > a)
 (b > a || a > b)
 
+// alternatively we can use bitwise | or ^ to save 1 character this returns 0 if both are the same
+
+(a>b|b>a)
+
 ```
 
 ### Bool/String/Number Coercion
