@@ -4,7 +4,7 @@
 
 What is IJScript? IJS is an attempt to write the most unreadable and short javascript code possible, and to develope a style of formatting code that can be resused.
 
-This entire repo was inspired by code golf. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). It is worth noting that this entire idea is a subset of Code golfing because it relies on the same core idea.
+This entire repo was inspired by code golf and code wars. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). It is worth noting that this entire idea is a subset of Code golfing because it relies on the same core idea.
 
 What does the **I** stand for in IJS? Incomprehensible, indecipherable or inconceivable.
 
