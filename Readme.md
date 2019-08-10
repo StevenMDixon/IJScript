@@ -1,4 +1,4 @@
-# :japanese_goblin: IJScript
+# :japanese_goblin: IJScript 
 
 ![badge](https://img.shields.io/badge/Version-1.0-green)
 
