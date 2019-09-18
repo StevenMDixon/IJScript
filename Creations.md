@@ -175,6 +175,42 @@ let z=(a,o={},i=0)=>(a[i]+i+1?z(a,((o[a[i]]+=1)||(o[a[i]]=1), o),-~i):o)
 
 ---
 
+### Challenge :eight:
+
+#### Challenge: 
+
+Write a function that checks if the input string is a palendrome. Palendromes are strings that are the same forwards as backwards such as `racecar` or `madam`
+
+<details>
+<summary>Normal Answer</summary>
+<br>
+  
+```Javascript
+function p(word, i = 0, is = true){
+	if(i == word.length) return true;
+  if(is == false){
+  return false; 
+  }
+  else return  p(word, ++i, word[i] == word[word.length-1-i])
+}
+```
+
+</details>
+
+<details>
+<summary>IJScript Answer</summary>
+<br>
+  
+```Javascript
+r=(w,i=0,t=1)=>w[i]+i+1?r(w,-~i,t^1?!1:w[i]==w[+Object.keys(w).pop()-i]):r
+```
+
+</details>
+
+---
+
+
+
 
 ## Non-problem related examples
 
