@@ -124,16 +124,33 @@ const o=(a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:o(a,b+({0:'(',3:') ',6:'
 Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
 
 <details>
-<summary>IJScript Answer</summary>
+<summary>Normal Answer</summary>
 <br>
   
-```Javascript
-const i=(a,b=[],c=[...a].entries(),i=0)=>(r=>!(r)?b.map(u=>((+Object.keys(u).pop())?u:u+'_')):i(a,(!(i%2)?[...b,a.substr(i,2)]:b),c,i+1))(c.next().value)
+```JavaScript
+function y(a, b=[], i=0){
+  if(i >= a.length){
+    return b;
+  }
+  return y(a, [...b, a[i]+(a[i+1]||"_")],i+=2)
+}
 ```
 
 </details>
 
+<details>
+<summary>IJScript Answer</summary>
+<br>
+  
+```JavaScript
+e=(a, b=[], i=0)=>a[i]+i+1?e(a,[...b, a[i]+(a[-~i]||"_")],-~!0+i):b
+```
+
+
+</details>
+
 ---
+
 
 ### Challenge :seven:
 
