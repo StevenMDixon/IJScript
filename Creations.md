@@ -202,7 +202,7 @@ function p(word, i = 0, is = true){
 <br>
   
 ```Javascript
-r=(w,i=0,t=1)=>w[i]+i+1?r(w,-~i,t^1?!1:w[i]==w[+Object.keys(w).pop()-i]):r
+r=(w,i=0,t=1)=>w[i]+i+1?r(w,-~i,t^1?!1:w[i]==w[+Object.keys(w).pop()-i]):t
 ```
 
 </details>
