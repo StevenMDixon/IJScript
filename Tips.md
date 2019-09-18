@@ -543,6 +543,19 @@ Like being able to replace alot of mathematical expressions like so
 
 Heres the source that I ripped this from [here](https://codegolf.stackexchange.com/questions/2682/tips-for-golfing-in-javascript)
 
+### New things
+
+#### functions as default params
+
+``` Javascript
+t = (a, i=0, y = (g='')=>(g), b="")=>a[i]+1+i?t(a, -~i, y,b+y(a[i])): b
+```
+
+#### calling functions with template literals
+
+``` JavaScript
+f``
+```
 
 ## Conclusion
 
