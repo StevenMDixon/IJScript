@@ -38,7 +38,7 @@ Not a perfect answer in terms of speed, however it is more readable than the IJS
 <br>
   
 ```JavaScript
-  const u=(a,b,f=+(a<b?a:b))=>(!((!(+a%f))&&!(+b%f))?u(b,a,f-1):f)
+u=(a,b,f=+(a<b?a:b))=>(!((!(+a%f))&&!(+b%f))?u(b,a,f-1):f)
 ```
 
 
@@ -57,7 +57,7 @@ Have the function take the parameter being passed and return the factorial of it
 <br>
   
 ```Javascript
-  const f=((n, g=1)=>!n?g:f(n-1, g*n))  
+f=((n, g=1)=>!n?g:f(n-1, g*n))  
 ```
 
 </details>
@@ -75,7 +75,7 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 <br>
   
 ```Javascript
-  const q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''  
+q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''  
 ```
 </details>
 
@@ -92,7 +92,7 @@ Write a function that takes in a string of one or more words, and returns the sa
 <br>
   
 ```Javascript
-const z=(a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:z(a, b, i+1, f+(i?' ':'')+(b[i].lastIndexOf("")>=5?[...b[i]].reduce((h,m) =>h=m+h,""):b[i]))) 
+z=(a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:z(a, b, i+1, f+(i?' ':'')+(b[i].lastIndexOf("")>=5?[...b[i]].reduce((h,m) =>h=m+h,""):b[i]))) 
 ```
 
 </details>
@@ -110,7 +110,7 @@ Write a function that accepts an array of 10 integers (between 0 and 9), that re
 <br>
   
 ```JavaScript
-const o=(a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:o(a,b+({0:'(',3:') ',6:'-'}[i]||'')+a[i],i+1))
+o=(a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:o(a,b+({0:'(',3:') ',6:'-'}[i]||'')+a[i],i+1))
 ```
 
 </details>
@@ -143,7 +143,7 @@ function y(a, b=[], i=0){
 <br>
   
 ```JavaScript
-e=(a, b=[], i=0)=>a[i]+i+1?e(a,[...b, a[i]+(a[-~i]||"_")],-~!0+i):b
+e=(a,b=[],i=0)=>a[i]+i+1?e(a,[...b, a[i]+(a[-~i]||"_")],-~!0+i):b
 ```
 
 
