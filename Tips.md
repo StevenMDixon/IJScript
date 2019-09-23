@@ -512,7 +512,7 @@ I want to say I understand how this works but I don't so here's a link to the [r
 The parameters of a function give away a lot of information especially when they are using default parameters. This can be gotten around by using 
 coercion. 
 
-```
+```JavaScript
 // strings
 
 u = (t="") => ()

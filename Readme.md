@@ -53,3 +53,9 @@ So this is my version of code golfing taken to an extreme. I also really like Ja
 - [Air BnB Style Guide](https://github.com/airbnb/javascript)
 - [Google Style Guide](https://google.github.io/styleguide/jsguide.html)
 - [Idiomatic JavaScript Style Guide](https://github.com/rwaldron/idiomatic.js/)
+
+### Thanks
+
+Special thanks to:
+
+- [u/MissileEngineer](reddit.com/user/MissileEngineer) for the repl.it on representing numbers in js as negated expressions
