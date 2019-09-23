@@ -1,4 +1,4 @@
-# :japanese_goblin: IJScript  
+# :japanese_goblin: IJScript
 
 ![badge](https://img.shields.io/badge/Version-1.0-green)
 
@@ -6,11 +6,11 @@ What is IJScript? IJS is an attempt to write the most unreadable and short javas
 
 This entire repo was inspired by code golf and code wars. If you don't know what code golf is check out this link [code golf](https://dev.to/healeycodes/answered-what-the-heck-is-code-golf-48pi). It is worth noting that this entire idea is a subset of Code golfing because it relies on the same core idea.
 
-What does the **I** stand for in IJS? Incomprehensible, indecipherable or inconceivable.
+What does the ***I*** stand for in IJS? Incomprehensible, indecipherable or inconceivable.
 
 ## :dart: The Goal of IJS
 
-Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write IJS.
+Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code that's the whole point. Check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write IJS.
 
 ## :art: The Methodology
 
@@ -18,11 +18,11 @@ Create a system of writing the most unreadable code possible. Random Coding chal
 - [x] All answers must be resolved in a single lambda expression
 - [x] Math and Coercion are your best friends at the end of the day
 
-One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"
+`One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"`
 
 ## Example
 
-A simple caclulator function that takes three arguments
+A simple calculator function that takes three arguments:
 
 ```JavaScript
 c=(o,n1,n2,a)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||a+' operator');
@@ -36,13 +36,13 @@ This is a good example of IJS. Short and otherwise unreadable code, unless given
 
 Check out the [Creations Page](Creations.md) for some challenges.
 
-## :tada:	The Conclusion 
+## :tada: The Conclusion
 
-JavaScript is a very quirky language and it can be written several different ways. Not all of these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week. Code like this belongs to the realm of minifiers.
+JavaScript is a very quirky language and it can be written several different ways. Not all of these ways are good, but the thing to keep in mind is that readable code is always better than non-readable code. Can you use some of the stuff from above to write your code? certainly! but good luck understanding it after a week.
 
 If you have read this far I suggest forgetting everything you have read and actually pick up a widely supported style guide and study that. Is JavaScript a bad Language? I don't think so, I think it is only as bad as you make it.
 
-Why did you create this *"thing"*?
+Why did you create this _"thing"_?
 
 I really liked the Idea of code golfing but quickly realized that it in itself is a game and has almost no place inside of a proper workplace. I also love those 60's scifi horror movies where the evil 'thing' is just some idea taken to the extreme in an impossible situation.
 
