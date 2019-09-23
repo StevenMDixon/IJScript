@@ -88,11 +88,28 @@ q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''
 Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
 <details>
+<summary>Normal Answer</summary>
+<br>
+
+```Javascript
+function reverse(a){
+	if(a.length >= 5){
+  	return a.split("").reverse().join("")	
+  }else{
+  return a;
+  }
+}
+```
+
+</details>
+
+<details>
 <summary>IJScript Answer</summary>
 <br>
   
 ```Javascript
-z=(a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:z(a, b, i+1, f+(i?' ':'')+(b[i].lastIndexOf("")>=5?[...b[i]].reduce((h,m) =>h=m+h,""):b[i]))) 
+k=(f,c=[],y=-~Object.keys(f).pop(),t=y)=>~t^5?f[~-y]?k(f,c+=f[~-y],~-y,t):c:f
+
 ```
 
 </details>
@@ -106,11 +123,30 @@ z=(a, b=a.match(/\w+/g), i=0, f="")=>(i>(+Object.keys(b).pop())?f:z(a, b, i+1, f
 Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
 
 <details>
+<summary>Normal Answer</summary>
+<br>
+
+```JavaScript
+function createPhoneNumber(numbers){
+  var format = "(xxx) xxx-xxxx";
+  
+  for(var i = 0; i < numbers.length; i++)
+  {
+    format = format.replace('x', numbers[i]);
+  }
+  
+  return format;
+}
+```
+
+</details>
+
+<details>
 <summary>IJScript Answer</summary>
 <br>
   
 ```JavaScript
-l=(a,b=[],f=-![])=>(a[f]+-~f?l(a,b+({0:'(',3:') ',6:'-'}[f]||[])+a[f],-~f):b)
+l=(a,b=[],f=+[])=>(a[f]+-~f?l(a, b+(['(',')','-'][f/3]||[])+a[f],-~f):b)
 ```
 
 </details>

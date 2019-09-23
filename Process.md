@@ -8,8 +8,9 @@ This methodology can be broken down into some simple steps, however this is goin
 
 1. Locate an issue
 2. Solve the problem using plain JS
-3. Apply IJS methodology
-4. Profit
+3. Apply Core IJS methodology
+4. Refactor until unreadable 
+5. Profit
 
 ## Locating a Problem to solve
 
@@ -21,7 +22,7 @@ Write a function that accepts an array of 10 integers (between 0 and 9), that re
 
 ## Solve the problem using plain JS
 
-This step can be skipped once you feel confortable with the whole process.
+This step can be skipped once you feel conformable with the whole process.
 
 However for this instance we are going to quickly solve the problem!
 
@@ -58,7 +59,7 @@ so the first thing we should do is create our function
 
 `l` is a pretty simple name and defining the function as a global variable save 3 bytes.
 
-The next thing is defining out paramaters we know we need to accept an array (we may need to define more paramaters later on but for now one is enough)
+The next thing is defining out parameters we know we need to accept an array (we may need to define more parameters later on but for now one is enough) a will represent the string that is passed in.
 
 ```JavaScript
 l = (a) => ();
@@ -66,7 +67,7 @@ l = (a) => ();
 
 At this point we know we can assume we want to loop through the array that is being passed
 
-We could just use concatination and divide the arrary into the appropriate parts
+We could just use concatenation and divide the array into the appropriate parts
 
 ```JavaScript
 l = (a) => (`(${a.slice(0,3)})${a.slice(3,6)}-${a.slice(6,10)}`);
@@ -80,32 +81,97 @@ We will need an index, and an exit point.
 l = (a, i=0) => i >= a.length? a: l(a, i+1);
 ```
 
-This looks pretty good, we stored our index as default paramter, and we are checking if its at the end by comparing the size.
+This looks pretty good, we stored our index as default parameter, and we are checking if its at the end by comparing the size. If the current index is larger than the array we exit the recursion.
 
 Now we need to check the index of so we can add the correct formatting. One way to do this would be with ternary statements, however want to keep the code small so how about we just use a object with the keys set at 0,3,6.
 
-We are also going to need a place to store our output since we will be creating a new variable.
+the function will check if the current index exists in the object or it will be ''.
+
+We are also going to need a place to store our output since we will be creating a new variable, b.
 
 ```JavaScript
-l=(a,i=0,b='')=>(i===a.length?b:l(a,i+1,b+({0:'(',3:')',6:'-'}[i]||'')+a[i]));
+l=(a, b='', i=0)=>(i >= a.length? b: l(a, b+({0:'(',3:')',6:'-'}[i]||'')+a[i], i+1))
 ```
 
 This looks like it is coming along perfectly now. we have our recursion and we are creating a new string. now for some micro optimizations
 
+## Refactor
+
 If you haven't checked out the Tips section of this repo now is the time to check it out [Tips](Tips.md)
 
+first thing first lets optimize our index check expression
+
 ```JavaScript
-l=(a,i=0,b='')=>(a[i]+i+1>i?l(a,-~i,b+['(',')','-'][i/3]||''+a[i]):b);
+// This looks good
+
+({0:'(',3:')',6:'-'}[i]||'')+a[i]
+
+// but what about
+
+(['(',')','-'][i/3]||'')+a[i]
+
 ```
 
-look at all these optimizations: (wow so much work for 8 characters)
+Small optimization but it saves a couple bytes, Now our function looks like this
 
-1. We dont need to check the arrays length since when i is greater than 10 a[i] == undefined which is false and adding to undefined === NaN
-2. All i+1 or i+=1 can be replaced with -~1
-3. We saved some bytes by changing the object into an array and dividing the index by 3
-4. Remove all white spaces
+```JavaScript
 
-## Fin
+l=(a, b='', i=0)=>(i >= a.length? b : l(a, b+(['(',')','-'][i/3]||'')+a[i], i+1))
 
-This is the process that I have been using to get to the answers after a while it will feel natural. Now go forth and write the most IJS code you can!
+```
+
+## Refactor 
+
+Lets do some more refactoring, I think we can save some space on our index checking expression for when we need to exit the recursion.
+
+```JavaScript
+// Currently we are using
+i >= a.length
+
+// This can be rewritten as an expression
+a[i]+i+1
+```
+
+That saves us another 5 characters! but we have to invert our logic
+
+Now our code looks a little better
+
+```JavaScript
+l=(a, b='', i=0)=>(a[i]+i+1?l(a, b+(['(',')','-'][i/3]||'')+a[i], i+1):b)
+```
+
+## Refactor
+
+Lets run some super fun optimizations, lets obfuscate some stuff!
+
+Replace all numbers and strings with [] or -![]
+
+in js [] == '' and +[] == 0
+
+```JavaScript
+l=(a, b=[], i=+[])=>(a[i]+i+1?l(a, b+(['(',')','-'][i/3]||[])+a[i], i+1):b)
+```
+
+Replace all +1 with -~1
+
+```JavaScript
+l=(a, b=[], i=+[])=>(a[i]+-~i?l(a, b+(['(',')','-'][i/3]||[])+a[i], -~i):b)
+```
+Replace i with something else, as programmers we already know what i is just by looking at it
+
+```JavaScript
+l=(a, b=[], f=+[])=>(a[f]+-~f?l(a, b+(['(',')','-'][f/3]||[])+a[f], -~f):b)
+```
+
+Remove all white spaces
+
+```JavaScript
+l=(a,b=[],f=+[])=>(a[f]+-~f?l(a, b+(['(',')','-'][f/3]||[])+a[f],-~f):b)
+```
+
+## Profit
+
+This is the entire process, it's a ton of work to write code like this but the more you practice the better you will become. 
+
+Now go forth and write the most IJS code you can!
 

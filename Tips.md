@@ -507,6 +507,37 @@ let k = ~-1
 
 I want to say I understand how this works but I don't so here's a link to the [resource](https://www.geeksforgeeks.org/add-1-to-a-given-number/)
 
+### obfuscating function parameters
+
+The parameters of a function give away a lot of information especially when they are using default parameters. This can be gotten around by using 
+coercion. 
+
+```
+// strings
+
+u = (t="") => ()
+
+// in this instance we know t is a string. We can use an alternative way of representing and empty string. we can substitute and empty string 
+// with and empty [] array and everything will work fine.
+
+u = (t=[]) => ()
+
+// numbers
+
+u = (t=0) => ()
+
+// numbers are a bit more tricky we can use [] as the substitute but t++ will behave oddly
+ 
+u = (t=[]) => (t++)  // t = 0
+
+// this can be corrected in a couple ways
+
+u = (t=[]) => (-~t)  // t = 1
+u = (t=[]) => (t+1)  // t = 1
+u = (t=-~[]) => (t++)  // t = 1
+```
+
+
 ### :golf: Code Golfing
 
 If you've never heard of it, it is crazy to see some of the stuff people come up with
