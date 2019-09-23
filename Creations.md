@@ -110,7 +110,7 @@ Write a function that accepts an array of 10 integers (between 0 and 9), that re
 <br>
   
 ```JavaScript
-o=(a,b="",i=0)=>(!(i-(+Object.keys(a).pop()+1))?b:o(a,b+({0:'(',3:') ',6:'-'}[i]||'')+a[i],i+1))
+l=(a,b=[],f=-![])=>(a[f]+-~f?l(a,b+({0:'(',3:') ',6:'-'}[f]||[])+a[f],-~f):b)
 ```
 
 </details>
