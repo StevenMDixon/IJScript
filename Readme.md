@@ -32,6 +32,10 @@ This is a good example of IJS. Short and otherwise unreadable code, unless given
 
 ![WTF](https://media.tenor.com/images/88d97fbeb4a01f923012b103417f7cb1/tenor.gif)
 
+## :mortar_board: Testing
+
+I have written a function to test functions written with the IJS methodology. See [test.js](test.js). These tests will ensure a writer is following the IJS methodology to a T. To use the test just pass your function without calling it and check the console output.
+
 ## :100: The Challenges
 
 Check out the [Creations Page](Creations.md) for some challenges.
