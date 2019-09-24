@@ -1,6 +1,6 @@
 # :japanese_goblin: IJScript
 
-![badge](https://img.shields.io/badge/Version-1.0-green)
+![badge](https://img.shields.io/badge/Version-1.1-green)
 
 What is IJScript? IJS is an attempt to write the most unreadable and short javascript code possible, and to develope a style of formatting code that can be reused.
 
