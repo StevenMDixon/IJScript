@@ -85,7 +85,7 @@ q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''
 
 #### Challenge:
 
-Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed. Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
 <details>
 <summary>Normal Answer</summary>
@@ -108,7 +108,7 @@ function reverse(a){
 <br>
   
 ```Javascript
-k=(f,c=[],y=-~Object.keys(f).pop(),t=y)=>~t^5?f[~-y]?k(f,c+=f[~-y],~-y,t):c:f
+k=(f,c=[],y=[...f].unshift(),t=y)=>~t^5?f[~-y]?k(f,c+f[~-y],~-y,t):c:f
 
 ```
 
@@ -193,7 +193,7 @@ e=(a,b=[],i=0)=>a[i]+i+1?e(a,[...b, a[i]+(a[-~i]||"_")],-~!0+i):b
 #### Challenge: 
 
 
-Write a funciton that counts all the occuring characters(UTF-8) in string. If you have string like this `aba` then the result should be { 'a': 2, 'b': 1 }
+Write a function that counts all the occurring characters(UTF-8) in string. If you have string like this `aba` then the result should be { 'a': 2, 'b': 1 }
 
 What if the string is empty ? Then the result should be empty object literal `{ }`
 
@@ -232,7 +232,7 @@ let z=(a,o={},i=0)=>(a[i]+i+1?z(a,((o[a[i]]+=1)||(o[a[i]]=1), o),-~i):o)
 
 #### Challenge: 
 
-Write a function that checks if the input string is a palendrome. Palendromes are strings that are the same forwards as backwards such as `racecar` or `madam`
+Write a function that checks if the input string is a palindrome. Palindromes are strings that are the same forwards as backwards such as `racecar` or `madam`
 
 <details>
 <summary>Normal Answer</summary>

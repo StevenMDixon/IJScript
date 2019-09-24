@@ -4,7 +4,7 @@ This guide aims to walk someone through the though process on creating an answer
 
 ## Steps
 
-This methodology can be broken down into some simple steps, however this is going to feel like solving a rubiks cube a some points.
+This methodology can be broken down into some simple steps, however this is going to feel like solving a rubik's cube a some points.
 
 1. Locate an issue
 2. Solve the problem using plain JS
