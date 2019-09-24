@@ -1,10 +1,10 @@
 # :mortar_board: Tips on Writing IJScript
 
-Welcome to the tips section hopefully this will help you write some aweful javascript code.
+Welcome to the tips section hopefully this will help you write some awful javascript code.
 
 JavaScript is a VERY quirky language, and I am going to run through some tips that will let you write some of the worst Javascript.
 
-## preword 
+## foreword 
 
 There are some advanced topics in the following tips some things you may want to be well versed in.
 
@@ -25,7 +25,7 @@ Fun facts about Arrow functions
 
 1. These functions always have an implicit returns (this removes the need to use `return`) 
 2. Any thing requiring a block scope will throw an error (for/while/switch/function...) (the only exception is an object but it must be wrapped in ())
-3. Everthing must be written as an expression. (this means Statements and semicolons are illegal `let i = 1;`)
+3. Everything must be written as an expression. (this means Statements and semicolons are illegal `let i = 1;`)
 4. All default variables must be written into the parameters of the function (Thank you ES6)
 
 ```JavaScript
@@ -44,7 +44,7 @@ const f = (a=10) =>(a)
 
 ## :capital_abcd: Coercion
  
-Coercion is probably the best part of JavaScript, It makes perfectly readable code into a almagamation off odd symbols and cryptic information. Let us see what coercion can do for us! So how can we use it to make our code shorter and more unreadable.
+Coercion is probably the best part of JavaScript, It makes perfectly readable code into a amalgamation off odd symbols and cryptic information. Let us see what coercion can do for us! So how can we use it to make our code shorter and more unreadable.
 
 There are two types of coercion in JavaScript: Explicit and Implicit.
 
@@ -87,10 +87,10 @@ let x = 3;
 
 ##### Strings
 
-Strings are a lot more complicated as `===` makes comparisions trivial. There are also a number of built in string functions that 
-these comparision simple. We don't want simple, We want unreadable and cryptic code!
+Strings are a lot more complicated as `===` makes comparisons trivial. There are also a number of built in string functions that 
+these comparison simple. We don't want simple, We want unreadable and cryptic code!
 
-We could loop throught the string and compare them but that is gonna be hard to compare string with out loops, and we can't use `for` or `while`.
+We could loop through the string and compare them but that is gonna be hard to compare string with out loops, and we can't use `for` or `while`.
 
 What if I told you that JavaScript had a built in operator that loops through a string without use a string function or loop?
 
@@ -133,7 +133,7 @@ Remember that JavaScript is a weakly typed language. There are Two ways to conve
 
 #### To Strings
 
-The `+` operater is the easiest and fastest way to convert any data type into a string. Another way is to use template literals as this could be considered less readable at some point.
+The `+` operator is the easiest and fastest way to convert any data type into a string. Another way is to use template literals as this could be considered less readable at some point.
 
 ```JavaScript
 
@@ -148,7 +148,7 @@ c = 'false'
 
 #### To Numbers
 
-This is where it gets a little more complicated, because the JS compiler will automatically trigger implicit conversions in certian cases including: 
+This is where it gets a little more complicated, because the JS compiler will automatically trigger implicit conversions in certain cases including: 
 
 - comparison operators (`>`, `<`, `<=`,`>=`)
 - bitwise operators ( `|` `&` `^` `~)
@@ -174,15 +174,15 @@ true | 0        // implicit
 +null          //0
 ```
 
-JavaScript will trim whitespaces from string before converting it to a number. (This includes `\n` and `\t`)
+JavaScript will trim whitespace from string before converting it to a number. (This includes `\n` and `\t`)
 
 
-```Javasctipt
+```Javascript
  +'   1   '+''
  // this a an alternative to string.trim()
 ```
 
-Remember that NaN !== NaN or anything else, this is important because if you implicitly convert something to a number and JS spits out NaN all comparisions will fail.
+Remember that NaN !== NaN or anything else, this is important because if you implicitly convert something to a number and JS spits out NaN all comparisons will fail.
 
 When applying `==` to `null` or undefined, numeric conversion does not happen. `null` equals only to `null` or `undefined`, and does not equal to anything else.
 
@@ -246,7 +246,7 @@ Reading through different style guides you will notice that ternary statements a
 
 ### Overloading `&&`/`||`
 
-If you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparision with these operators is always returned. This can be a valuable substitute for `if` statements.
+If you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparison with these operators is always returned. This can be a valuable substitute for `if` statements.
 
 ```JavaScript
 
@@ -256,7 +256,7 @@ let a = true&&'apples';
 let b =- false||'grapes';
 // b = 'grapes'
 
-//we get some fun times when you chain them together for if else statments
+//we get some fun times when you chain them together for if else statements
 
 let c = a && (false||b);
 
@@ -268,13 +268,13 @@ It is worth remembering that both sides of the comparison are evaluated before t
 
 ### check if a string is empty or a number is 0
 
-A usefull tool is checking if a string is empty, this can be accomplished by overloading the `||` operator.
+A useful tool is checking if a string is empty, this can be accomplished by overloading the `||` operator.
 
 ```JavaScript
 n||0  ~  n.length === 0
 ```
 
-if `n` is a non empy string or non zero number this expression will return `n` or zero which is false. 
+if `n` is a non empty string or non zero number this expression will return `n` or zero which is false. 
 
 ### The Comma operator `,`
 
@@ -305,7 +305,7 @@ function example(a){
  return (a<5&&(a+=5)), a;
 }
 
-// If your answer was return `a+5` when a < 5 is true and return a when a >=5 then you are correct. Everything in the comparision is 
+// If your answer was return `a+5` when a < 5 is true and return a when a >=5 then you are correct. Everything in the comparison is 
 // evaluated only if a < 5 is true. however a is always evaluated because the compiler evaluates from left to right. Crazy right?
 
 ```
@@ -325,14 +325,14 @@ So allow me to introduce you to the expressive `MapSwitch`!
 
 ```JavaScript
 
-let a = 'sdkjfhslkhfd';
+let a = 'test';
 
 let b = ({0:'a',1:'e'}[a]||'o')
 //a === 'o'  
 
 ```
 
-The overloaded `||` is used to define a defualt statement for the switch.
+The overloaded `||` is used to define a default statement for the switch.
 
 This can also be expressed using an array when working with numbers
 
@@ -347,7 +347,7 @@ In this instance the result of dividing a by 5 is used to access the index in th
 
 ## for/of/in
   
-Fortunatly there is a couple ways to iterate through things without for loops. 
+Fortunately there is a couple ways to iterate through things without for loops. 
  
 ### Iterators
  
@@ -357,7 +357,7 @@ Both `Array.prototype.values()` and `Array.prototype.entries()` return a iterato
  
 These are very obscure functions and it goes without saying iterators are very hard to keep up with.  
  
-Let me introduce you to the equivalant of prototype.length but with Iterators
+Let me introduce you to the equivalent of prototype.length but with Iterators
  
  ```Javascript
  
@@ -389,7 +389,7 @@ Normally we would use Object.length in order to find the length of arrays or str
 
 But that's just not gonna work here. we need something more.... crafty.
 
-what about string prototpye functions?
+what about string prototype functions?
 
 ```JavaScript
 let test = "ipsum";
@@ -402,17 +402,25 @@ How does this work? well it's kind of apparent. JS starts at the end of the stri
 
 This is kind of readable, would anyone suggest this instead of length? No. And unfortunately this is a string prototype function which means it wont work on Arrays.
 
-Object.keys() is another way to hanlde the length issue. In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
+Object.keys() is another way to handle the length issue. In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
 
 ```JavaScript
   let a = +Object.keys('I am a text').pop()+1;
   //this will give you the length of a string or array
-  //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECCESARY TO ADD 1 TO GET THE ACTUAL LENGTH 
+  //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECESSARY TO ADD 1 TO GET THE ACTUAL LENGTH 
 ```
 
 How does this work? Object keys returns an array of keys [1,2,3,4] for each index of a String or Array. Array.prototype.pop() returns the value of the last index of an array. then + coerces the returned item into a number.
 
-This is being crafty however the comparision in length of code bewteen this and Object.length is quite large, so it is up to the writer if they want shorter or less readable code in this instance.
+This is being crafty however the comparison in length of code between this and Object.length is quite large, so it is up to the writer if they want shorter or less readable code in this instance.
+
+Another way to handle this is to use an uncommon array prototype function
+
+```JavaScript
+let a = 'test"
+let b = [...a].unshift()
+// unshift is the only array function that returns the length of an array, b = 4
+```
 
 A shorter way is to abuse our friend coercion while using some funky math
 
@@ -428,23 +436,23 @@ a[i] >= a.length
 
 ```
 
-This equation will equal true until i exceeds the lenght of the array, at that point a[i] = undefined and in JS undefined + any number equals NaN. Which is false in any logical context.
+This equation will equal true until i exceeds the length of the array, at that point a[i] = undefined and in JS undefined + any number equals NaN. Which is false in any logical context.
 
 ## :cherries: Variable Names
 
-For some reason the javascript allow unicode gliphs for 'Identifiers'.
+For some reason the javascript allow unicode glyphs for 'Identifiers'.
 
 For the purposes of IJS these formats are a little to long (\u0061, \u{61} both being 6 characters long)
 
 what we really want are the glyphs that take up one character and are not very readable.
 
-Note* while this is neat and can add some obfuscation to your code `ʘ` is just as unreadble as `a` in instances where you cannot tell what the variable is any. Also you can use character from other languages such as `ε` and `草` 
+Note* while this is neat and can add some obfuscation to your code `ʘ` is just as unreadable as `a` in instances where you cannot tell what the variable is any. Also you can use character from other languages such as `ε` and `草` 
 
 Glyphs examples:
 
 `☉, ⊙, ಠ, ∏, Π, П`
 
-Full list of [Glyohs](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+Full list of [Glyphs](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
 
 ```JavaScript 
 
@@ -459,7 +467,7 @@ Quick aside about Emojis.
 
 Currently we can use Emojis as Keys in objects because they are strings. 
 
-```Javscript
+```Javascript
 let obj = {'🧡': 'hello'}
 
 console.log(obj['🧡'])
@@ -544,7 +552,7 @@ If you've never heard of it, it is crazy to see some of the stuff people come up
 
 There are tons of replacements for common things 
 
-Like being able to replace alot of mathematical expressions like so
+Like being able to replace many mathematical expressions like so
 
 ```JavaScript
 
