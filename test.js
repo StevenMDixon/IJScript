@@ -31,7 +31,7 @@ function test(func) {
     },
     {
       name: "why are you using 1 or 0",
-      status: /[^a-zA-Z]1|0/.test(func) === false,
+      status: /[^a-zA-Z](1|0)+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/.test(func) === false,
       error: "Function should not include 1 or 0 use [] instead"
     },
     {
