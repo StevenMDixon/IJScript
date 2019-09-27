@@ -25,7 +25,7 @@ Create a system of writing the most unreadable code possible. Random Coding chal
 A simple calculator function that takes three arguments:
 
 ```JavaScript
-c=(o,n1,n2,a)=>({'m':n1*+n2,'a':+n1+(+n2),'s':n1-+n2,'d':n1/+n2,'p':(n1**+n2)}[o[0]]||a+' operator');
+c=(o,n1,n2,a)=>({'m':n1*n2,'a':n1+n2,'s':n1-n2,'d':n1/n2,'p':(n1**+n2)}[o[+[]]]||a+' operator')
 ```
 
 This is a good example of IJS. Short and otherwise unreadable code, unless given context.
