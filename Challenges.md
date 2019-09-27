@@ -1,4 +1,4 @@
-## :memo: Problems
+## :memo: Challenges
 
 ### Challenge :one:
 
