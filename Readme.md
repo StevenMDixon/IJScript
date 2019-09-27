@@ -38,7 +38,7 @@ I have written a function to test functions written with the IJS methodology. Se
 
 ## :100: The Challenges
 
-Check out the [Creations Page](Creations.md) for some challenges.
+Check out the [Challenges Page](Challenges.md) for some challenges.
 
 ## :tada: The Conclusion
 
