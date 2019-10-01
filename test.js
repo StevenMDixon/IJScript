@@ -89,3 +89,10 @@ function test(func) {
     console.log("%cAll test passed", "color: green");
   }
 }
+
+
+let r=(w,q=+[],t=-~[])=>w[q]+-~q?r(w,-~q,t^1?!1:w[q]==w[[...w].unshift()-q]):t
+
+console.log(r("racecar"))
+
+test(r)

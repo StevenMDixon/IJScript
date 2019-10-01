@@ -38,7 +38,7 @@ Not a perfect answer in terms of speed, however it is more readable than the IJS
 <br>
   
 ```JavaScript
-u=(a,b,f=+(a<b?a:b))=>(!((!(+a%f))&&!(+b%f))?u(b,a,f-1):f)
+u=(a,b,f=+(a<b?a:b))=>(!((!(+a%f))&&!(+b%f))?u(b,a,f+~[]):f);
 ```
 
 
@@ -57,7 +57,7 @@ Have the function take the parameter being passed and return the factorial of it
 <br>
   
 ```Javascript
-f=((n, g=1)=>!n?g:f(n-1, g*n))  
+f=((n,g=-~[])=>!n?g:f(~-n, g*n)) 
 ```
 
 </details>
@@ -75,7 +75,7 @@ Have the function _Q(n,m) take both parameters being passed and return the strin
 <br>
   
 ```Javascript
-q=(n,m)=>(m>n?!!+m>n:!n-m?-1:!!+m>n)+''  
+q=(n,m)=>(m>n?!!+m>n:!n-m?~[]:!!+m>n)+[]  
 ```
 </details>
 
@@ -179,7 +179,7 @@ function y(a, b=[], i=0){
 <br>
   
 ```JavaScript
-e=(a,b=[],i=0)=>a[i]+i+1?e(a,[...b, a[i]+(a[-~i]||"_")],-~!0+i):b
+e=(a,b=[],q=+[])=>a[q]+-~q?e(a,[...b, a[q]+(a[-~q]||"_")],-~-~q):b
 ```
 
 
@@ -221,7 +221,7 @@ function count (string) {
 <br>
   
 ```Javascript
-let z=(a,o={},i=0)=>(a[i]+i+1?z(a,((o[a[i]]+=1)||(o[a[i]]=1), o),-~i):o)
+let z=(a,o={},z=+[])=>(a[z]+z+1?z(a,((o[a[z]]+=1)||(o[a[z]]=1), o),-~z):o)
 ```
 
 </details>
