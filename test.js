@@ -35,17 +35,17 @@ function test(func) {
       error: "Function should not include 1 or 0 use [] instead"
     },
     {
-      name: "+1",
+      name: "+1||-1",
       status: /(\+|\-)1/.test(func) === false,
       error: "Function should not use + or - 1 to increment or decrement, use -~n or ~-n"
     },
     {
-      name: "=== test",
+      name: "===||== test",
       status: /={2,3}/.test(func) === false,
       error: "Function should not use === or == for comparisions"
     },
     {
-      name: "true|false",
+      name: "true||false",
       status: /(true|false)+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/.test(func) === false,
       error: "Function should not use true or false keywords use implicit or explicit conversion instead"
     },
@@ -68,7 +68,12 @@ function test(func) {
       name: ">= or <=",
       status: /(>=|<=)/.test(func) === false,
       error: "Function should not use <= or >=, find something else to use"
-    }
+    },
+    {
+      name: "Eval test",
+      status: /eval+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/.test(func) === false,
+      error: "Function should not use eval, you cheater!"
+    },
   ];
 
   let failed = 0;

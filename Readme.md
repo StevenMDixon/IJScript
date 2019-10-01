@@ -10,13 +10,28 @@ What does the ***I*** stand for in IJS? Incomprehensible, indecipherable or inco
 
 ## :dart: The Goal of IJS
 
-Create a system of writing the most unreadable code possible. Random Coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code that's the whole point. Check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write IJS.
+Create a system of writing the most unreadable code possible. Random coding challenges will be used as examples to show of the progression of the system. If you cannot follow along or are having trouble reading the code that's the whole point. Check out the [Tips page](Tips.md) or the the [Process page](Process.md) to find out how to write IJS.
 
 ## :art: The Methodology
 
-- [x] All answers should be as short and unreadable as possible
-- [x] All answers must be resolved in a single lambda expression
-- [x] Math and Coercion are your best friends at the end of the day
+- All answers should be as short and unreadable as possible
+    - [x] Unreadable takes priority over length
+    - [x] Remove all unnecessary `[spaces, parenthesis, ;]`
+    - [x] Do not use `[let, const, var]`
+    - [x] Do not use `i` to represent a counter
+    - [x] Stay away from prototype functions as much as possible
+    - [x] `[.length]` should never be used.
+- All answers must be resolved in a single lambda expression
+    - [x] always use es6 arrow functions
+    - [x] always use implicit returns
+    - [x] define variables in the functions parameters
+- Math and Coercion are your best friends
+    - [x] Do not use `1||0` outside of strings 
+    - [x] Do not use empty strings `''||""`
+    - [x] Do not use `+1||-1`
+    - [x] Do not use `==||===`
+    - [x] Do not use `>=||<=`
+- Do not use eval 
 
 `One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"`
 
@@ -38,7 +53,7 @@ I have written a function to test functions written with the IJS methodology. Se
 
 ## :100: The Challenges
 
-Check out the [Challenges Page](Challenges.md) for some challenges.
+Check out the [Challenges Page](Challenges.md) for some completed challenges.
 
 ## :tada: The Conclusion
 
@@ -63,3 +78,7 @@ So this is my version of code golfing taken to an extreme. I also really like Ja
 Special thanks to:
 
 - [u/MissileEngineer](reddit.com/user/MissileEngineer) for the repl.it on representing numbers in js as negated expressions
+
+### Contributing
+
+If you want to contribute please open a pull request, I am always looking for ways to improve IJS.
