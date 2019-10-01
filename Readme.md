@@ -31,7 +31,7 @@ Create a system of writing the most unreadable code possible. Random coding chal
     - [x] Do not use `+1||-1`
     - [x] Do not use `==||===`
     - [x] Do not use `>=||<=`
-- Do not use eval 
+- Do not use eval
 
 `One of the core principles of programming is writing readable code. IJS throws that to the wind and asks "What if we just wrote code that no one could read?"`
 

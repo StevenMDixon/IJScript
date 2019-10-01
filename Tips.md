@@ -127,6 +127,25 @@ let b = 'Test'
 
 ```
 
+is there a better way?
+
+#### Comparing Strings the ES6 way
+
+ES6 has brought with it a major breakthrough in string comparing technology!
+
+```JavaScript
+a = 'test'
+b = 'IJS'
+
+{[a]:a}[b] 
+// this equals undefined(falsy) but if both strings are the same it will return the string(truthy).
+
+```
+
+by abusing some es6 syntactic sugar we can now compare strings without math or string prototypes!
+
+if you're wondering what this is called its `Computed property methods`
+
 ### Bool/String/Number Coercion
 
 Remember that JavaScript is a weakly typed language. There are Two ways to convert different data types to other data types, Implicit and Explicit conversions.
