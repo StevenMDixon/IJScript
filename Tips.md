@@ -18,7 +18,7 @@ This tips page will try to go into some in depth info on some of these topics bu
 
 Arrow Functions or Lambda Functions will serve as the base of our IJS experience.
 
-```JavaScript
+``` JavaScript
 const example =()=>()
 ```
 Fun facts about Arrow functions
@@ -28,7 +28,7 @@ Fun facts about Arrow functions
 3. Everything must be written as an expression. (this means Statements and semicolons are illegal `let i = 1;`)
 4. All default variables must be written into the parameters of the function (Thank you ES6)
 
-```JavaScript
+``` JavaScript
 
 const a = () =>('tomato')
 // always returns tomato due to implicit returns
@@ -62,7 +62,7 @@ From this statement we can put together a plan to check if two numbers are equal
 
 * Note: A normal location that uses implicit coercion is an `if` statement, however we will not have access to these while writing IJS. Instead we will have to use explicit coercion in places where implicit coercion does not happen.
 
-```JavaScript
+``` JavaScript
 
 console.log(!(a-b)) 
 // this will log true because of the explicit coercion
@@ -77,7 +77,7 @@ XOR works by comparing the bits between two numbers if the numbers bits are the 
 
 * Note: XOR does not work with strings
 
-```
+``` JavaScript
 
 let x = 3;
 // x^3  = 0
@@ -98,7 +98,7 @@ Introducing `>` and its brother `<`!
 
 You have probably used these guys before without even thinking about what they actually do (in the context of a string). 
 
-```JavaScript
+``` JavaScript
 let n = ['bx', 'aa' ,'ab', 'a1']
 
 n.sort((a,b) => a < b);
@@ -110,7 +110,7 @@ This is perfect! So if we compare two strings and they are equal, they will be n
 
 We can use this to put together this code:
 
-```JavaScript
+``` JavaScript
 let a = 'test';
 let b = 'Test'
 
@@ -135,7 +135,7 @@ Remember that JavaScript is a weakly typed language. There are Two ways to conve
 
 The `+` operator is the easiest and fastest way to convert any data type into a string. Another way is to use template literals as this could be considered less readable at some point.
 
-```JavaScript
+``` JavaScript
 
 let a = false
 
@@ -158,7 +158,7 @@ This is where it gets a little more complicated, because the JS compiler will au
 - Note that `==` does not trigger numeric conversion when both operands are strings.
 
 
-```JavaScript
+``` JavaScript
 
 +'123'          // implicit
 123 != '456'    // implicit
@@ -177,7 +177,7 @@ true | 0        // implicit
 JavaScript will trim whitespace from string before converting it to a number. (This includes `\n` and `\t`)
 
 
-```Javascript
+``` Javascript
  +'   1   '+''
  // this a an alternative to string.trim()
 ```
@@ -191,7 +191,7 @@ When applying `==` to `null` or undefined, numeric conversion does not happen. `
 
 JavaScript implicitly converts values into bools in two cases. The first being logical contexts, and the second is triggered by logical operators. (`||` `&&` `!`)
 
-```JavaScript
+``` JavaScript
 
 if (2) { ... }      // implicit due to logical context
 !!2                 // implicit due to logical operator
@@ -201,7 +201,7 @@ if (2) { ... }      // implicit due to logical context
 
 Logical operators such as `||` and `&&` do boolean conversions internally, but actually return the value of original operands, even if they are not boolean.
 
-```JavaScript
+``` JavaScript
 
 let x = 'hello' && 123;    // x === 123
 let y = true && 'apple';   // y === apple
@@ -211,7 +211,7 @@ let z = false && 'orange'; // z === false
 
 Empty arrays and Objects are converted to true as well. (Arrays are converted to true in general). The following always convert to false.
 
-```JavaScript
+``` JavaScript
 
 !!('')      // false
 !!0         // false
@@ -232,7 +232,7 @@ Because we are using concise arrow functions any statements that require a block
 So instead we need to write our if statements as expressions. Luckily JavaScript has a built in way of doing this with ternary
 expressions.
 
-```JavaScript
+``` JavaScript
 
 let a = 0;
 let b = 1;
@@ -248,7 +248,7 @@ Reading through different style guides you will notice that ternary statements a
 
 If you need quick if statements you can use `&&` or `||`. Javascript has this fun quirk where the second value in a comparison with these operators is always returned. This can be a valuable substitute for `if` statements.
 
-```JavaScript
+``` JavaScript
 
 let a = true&&'apples';
 // a === 'apples'
@@ -292,7 +292,7 @@ For instance `(1, 3, 4)` will always evaluate to `4`.
 
 this is also referred to as chaining. Remember everything in the expression is evaluated!
 
-```JavaScript
+``` JavaScript
 let a = 'apples';
 
 // this will run but what will it return?
@@ -312,7 +312,7 @@ function example(a){
 
 You can use this chain expressions together inside of a concise arrow function like so
 
-```JavaScript
+``` JavaScript
 let r = (a=1) => (a+1, a)
 // a = 2 when called
 ```
@@ -323,7 +323,7 @@ Well at this point it should be obvious why we cannot use `switch` statements. T
 
 So allow me to introduce you to the expressive `MapSwitch`!
 
-```JavaScript
+``` JavaScript
 
 let a = 'test';
 
@@ -336,7 +336,7 @@ The overloaded `||` is used to define a default statement for the switch.
 
 This can also be expressed using an array when working with numbers
 
-```JavaScript
+``` JavaScript
 let a = 10
 
 let b = ['s','h',1][a/5]||'0'
@@ -359,7 +359,7 @@ These are very obscure functions and it goes without saying iterators are very h
  
 Let me introduce you to the equivalent of prototype.length but with Iterators
  
- ```Javascript
+ ``` Javascript
  
  const t=(e,d=[...e].values(),c=0)=>(r=>!(r)?c:t(e,d,c+1))(d.next().value)
  
@@ -373,7 +373,7 @@ Iterators are great but they add a little more overhead to a function that plain
 
 The same function above with recursion
 
-```Javascript
+``` Javascript
 
 const t=(e,c=0)=>(e[c]+c+1?t(e,-~c):c)
 
@@ -391,7 +391,7 @@ But that's just not gonna work here. we need something more.... crafty.
 
 what about string prototype functions?
 
-```JavaScript
+``` JavaScript
 let test = "ipsum";
 
 let length = test.lastIndexOf("");
@@ -404,7 +404,7 @@ This is kind of readable, would anyone suggest this instead of length? No. And u
 
 Object.keys() is another way to handle the length issue. In JS Arrays and Strings are both objects which have keys. For both Arrays and strings, Their keys are indexes. So we can do something like this:
 
-```JavaScript
+``` JavaScript
   let a = +Object.keys('I am a text').pop()+1;
   //this will give you the length of a string or array
   //NOTE THAT THESE ARE KEYS WHICH START AT 0, SO IT IS NECESSARY TO ADD 1 TO GET THE ACTUAL LENGTH 
@@ -416,7 +416,7 @@ This is being crafty however the comparison in length of code between this and O
 
 Another way to handle this is to use an uncommon array prototype function
 
-```JavaScript
+``` JavaScript
 let a = 'test"
 let b = [...a].unshift()
 // unshift is the only array function that returns the length of an array, b = 4
@@ -424,7 +424,7 @@ let b = [...a].unshift()
 
 A shorter way is to abuse our friend coercion while using some funky math
 
-```
+``` JavaScript
 // Given i is our index
 // and a is our array or string
 
@@ -487,7 +487,7 @@ Normally we would use modulo`%` in order to determine if an number is even or od
 
 ```JavaScript 
 
-n%2 === ! n|1 
+n%2 === !n|1 
 
 n%3 === n|1
 
@@ -520,7 +520,7 @@ I want to say I understand how this works but I don't so here's a link to the [r
 The parameters of a function give away a lot of information especially when they are using default parameters. This can be gotten around by using 
 coercion. 
 
-```JavaScript
+``` JavaScript
 // strings
 
 u = (t="") => ()
@@ -545,6 +545,33 @@ u = (t=[]) => (t+1)  // t = 1
 u = (t=-~[]) => (t++)  // t = 1
 ```
 
+#### Using undefined variables in function parameters
+
+Given a function like below, not defining a parameter will cause it to be `undefined`. 
+
+``` JavaScript
+
+l=(a)=>a
+// returns undefined
+
+```
+We can exploit this to obfuscate the code further. This will be different for strings than with numbers.
+
+``` JavaScript
+//strings
+l=(a=[])=>a
+l=(a)=>a||[]
+// returns [], because []+'string' = 'string'.
+// this adds 1 character to the function 
+
+//numbers
+l=(a=[])=>a
+l=(a)=>a|a
+// returns 0 if a is undefined.
+// this is shorter by 1 character.
+```
+
+This works well with small functions where you are not using the parameter multiple times. 
 
 ### :golf: Code Golfing
 
@@ -584,17 +611,25 @@ Heres the source that I ripped this from [here](https://codegolf.stackexchange.c
 
 ### New things
 
-#### functions as default params
+#### Functions as default params
 
 ``` Javascript
 t = (a, i=0, y = (g='')=>(g), b="")=>a[i]+1+i?t(a, -~i, y,b+y(a[i])): b
 ```
 
-#### calling functions with template literals
+#### Calling functions with template literals
 
 ``` JavaScript
-f``
+f =(a)=>a
+
+f`test`
+// returns 'test'
+
 ```
+
+You can call a function by using template literals but the input must be a string. 
+
+Since we will have no control on how the function is called when being used in a challenge, this is cool but useless.
 
 ## Conclusion
 
