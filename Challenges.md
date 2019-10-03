@@ -221,7 +221,7 @@ function count (string) {
 <br>
   
 ```Javascript
-let z=(a,o={},z=+[])=>(a[z]+z+1?z(a,((o[a[z]]+=1)||(o[a[z]]=1), o),-~z):o)
+q = (a,o={},z=+[])=>a[z]+-~z?q(a,((o[a[z]]+=~-2)||(o[a[z]]=~-2),o),-~z):o;
 ```
 
 </details>
