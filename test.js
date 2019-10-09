@@ -1,8 +1,8 @@
 function test(func) {
   const tests = [{
       name: "i test",
-      status: /i+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/.test(func) === false,
-      error: "Function should not use i outside of quatations"
+      status: /i=/.test(func) === false,
+      error: "Function should not use i as a counter or variable"
     },
     {
       name: "white space test",
@@ -91,7 +91,7 @@ function test(func) {
 }
 
 
-let r=(w,q=+[],t=-~[])=>w[q]+-~q?r(w,-~q,t^1?!1:w[q]==w[[...w].unshift()-q]):t
+r=(w,q=+[],t=!![])=>w[q]+-~q?r(w,-~q,t^~-2?![]:{[w[q]]:!![]}[w[~-[...w].unshift()-q]]):t
 
 console.log(r("racecar"))
 
